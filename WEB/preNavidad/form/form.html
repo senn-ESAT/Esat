@@ -1,0 +1,141 @@
+<html>
+ <head>
+ <meta charset="UTF-8"/>
+ <title> FORM </title>
+ <style>
+  body{
+   font-family: Verdana;
+  }
+  h1{
+   background-color: orange;
+   color: white;
+  }
+  h2{
+   background-color:  lightgreen;
+   color: white;
+  }
+  h3{
+   background-color:  lightblue;
+   color: white;
+  }
+ </style>
+ </head> 
+
+ <body>
+  <a name="inicio">
+  <h1> TABLAS </h1>
+  <h2> FORM </h2>
+
+  <form>
+   Nombre: <input type="text" name="nombre"/><br>
+   Apellido: <input type="text" name="apellido"/><br>
+   CP: <input type="text" name="CP"/><br>
+  </form>
+
+  <h2> FORM con tablas </h2>
+  <form action="mailto:a@gmail.com" method="post" 
+  enctype="text/plain" name="formulario1">
+   <table border="0" width="500">
+    <tr>
+     <td align="right"> Nombre: </td>
+     <td> <input type="text" name="nombre" value="Nombre?" size="40"/> </td>
+    </tr>
+    <tr>
+     <td align="right"> DNI: </td>
+     <td> <input type="text" name="apellido" maxlength="11"/> </td>
+    </tr>
+    <tr>    
+     <td align="right"> Password: </td>
+     <td> <input type="password" name="CP"/> </td>
+    </tr>
+    <tr>    
+     <td align="right"> Comentarios: </td>
+     <td> <textarea rows="5" cols="40"> Intro comentarios </textarea> </td>
+    </tr>
+
+    <tr>    
+     <td align="right"> Lista de seleccion: </td>
+     <td> 
+      <select name="Libro">
+       <option> Seleccione libro: </option>
+       <option value="isbn256"> c++ </option>
+       <option value="isbn257"> c++ Avanzado </option>
+       <option value="isbn258" selected="selected"> c++ Para Torpes </option>
+       <option value="isbn259"> c++ Basico </option>
+      </select> 
+     </td>
+    </tr>
+
+    <tr>    
+     <td align="right"> Lista de seleccion con size: </td>
+     <td> 
+      <select name="Libro" size="3">
+       <option> Seleccione libro: </option>
+       <option value="isbn256"> c++ </option>
+       <option value="isbn257"> c++ Avanzado </option>
+       <option value="isbn258" selected="selected"> c++ Para Torpes </option>
+       <option value="isbn259"> c++ Basico </option>
+      </select> 
+     </td>
+    </tr>
+
+    <tr>    
+     <td align="right"> check box: </td>
+     <td>
+      <fieldset>
+       <legend align="center"> Vehiculo </legend>
+          Avion <input type="checkbox" name="transporte1" value="avion"><br>
+          Tren  <input type="checkbox" name="transporte2" value="tren"><br>
+          Auto  <input type="checkbox" name="transporte3" value="auto">
+      </fieldset>
+     </td>
+    </tr>
+
+    <tr>    
+     <td align="right"> Sexo: </td>
+     <td> 
+          Hombre <input type="radio" name="sexo" value="M"><br>
+          Mujer  <input type="radio" name="sexo" value="F"><br>
+     </td>
+    </tr>
+
+    <tr>    
+     <td align="right"> Adjuntar Fichero: </td>
+     <td> <input type="file"> </td>
+    </tr>
+
+    <tr>    
+     <td align="right"> Boton </td>
+     <td> <input type="button" value="AAAAAA" OnClick="alert('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"> </td>
+    </tr>
+
+    <tr>    
+     <td align="right" valign="top"> HTML5 </td>
+     <td>
+      <fieldset>
+       <input type="color"><br><br>
+       <input type="date"><br><br>
+       <input type="week"><br><br>
+       <input type="time"><br><br>
+       <input type="range"><br><br>
+       <input type="number"><br><br>
+       <input type="email"><br><br>
+       <input type="url"><br><br>
+      </fieldset>
+     </td>
+    </tr>
+
+    <tr>    
+     <td align="right">  </td>
+     <td> <input type="submit"> &nbsp; <input type="reset" value="Eliminar"> </td>
+    </tr>
+
+    <tr>    
+     <td align="right">  </td>
+     <td>  </td>
+    </tr>
+
+   </table>
+  </form>
+ </body>
+</html>

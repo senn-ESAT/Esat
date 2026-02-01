@@ -1,0 +1,337 @@
+<html>
+  <head>
+  <meta charset="UTF-8"/>
+  <title> TABLAS </title>
+  <style>
+    body{
+    font-family: Verdana;
+    }
+    h1{
+    background-color: orange;
+    color: white;
+    }
+    h2{
+    background-color:  lightgreen;
+    color: white;
+    }
+    h3{
+    background-color:  lightblue;
+    color: white;
+    }
+    .borde1{
+      border-style: solid;
+      border-color: blueviolet;
+      border-width: 2px;
+    }
+    .border2{
+      border-style: dotted;
+      border-color: blueviolet;
+      border-width: 5px;
+    }
+    .borde_rojo{border: solid 1px green}
+  </style>
+  </head> 
+  <body>
+    <a name="inicio">
+    <h1> TABLAS </h1>
+    <h2> Elementos Tabla </h2>
+    <table class="borde1">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table>
+
+    <h2> Border </h2>
+    <table border="1" class="border2">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table>
+
+    <h2> Width/Height en px </h2>
+    <table border="1" width="400" height="300" class="borde_rojo">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table>
+
+    <h2> width/heigh in % </h2>
+
+    <table border="1" width="70%" height="300">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table>
+
+    <h2> COLOR </h2>
+
+    <table border="1" width="70%" height="300" bgcolor="orange">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table><br>
+
+    <table border="1" width="70%" height="300" bgcolor="orange">
+    <tr>
+      <td>A</td>
+      <td bgcolor="green">B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table><br>
+
+    <table border="15" bordercolor="pink" width="70%" height="300" bgcolor="orange">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table>
+
+    <h2> FORMAT </h2>
+
+    <table border="1" width="70%" height="300">
+    <tr>
+      <td width="100">A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table><br>
+
+    <table border="1" width="70%" height="300">
+    <tr>
+      <td height="100">A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table>
+
+    <h2> Background </h2>
+
+    <table border="1" width="70%" height="300" background="../imagenes/img/fondos/fondo8.gif">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table><br>
+
+    <table border="1" width="70%" height="300" >
+    <tr>
+      <td background="../imagenes/img/fondos/fondo8.gif">A</td>
+      <td background="../imagenes/img/fondos/fondo9.gif">B</td>
+    </tr>
+    <tr>
+      <td background="../imagenes/img/fondos/fondo10.jpg">C</td>
+      <td background="../imagenes/img/fondos/fondo11.gif">D</td>
+    </tr>
+    </table><br>
+
+    <h2> ALIGN </h2>
+    <p><b> ALIGN = HORIZONTAL <-> VALIGN = VERTICAL </b></p>
+
+    <table border="1" width="70%" height="300" background="../imagenes/img/fondos/fondo8.gif" align="center">
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+    <tr align="center">
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </table><br>
+
+    <h2> Colspan Rowspan </h2>
+    <table border="1" width="400" height="400">
+    <tr>
+      <td colspan="2">A</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>C</td>
+    </tr>
+    </table><br>
+
+    <table border="1" width="400" height="400">
+    <tr>
+      <td rowspan="2">A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+    </tr>
+    </table>
+
+    <h2> Cellpaddin - Cellpacing </h2>
+    <table border="1" width="400" height="400" cellpadding="20" cellspacing="20">
+    <tr>
+      <td> A </td>
+      <td> B </td>
+    </tr>
+    <tr>
+      <td> C </td>
+      <td> D </td>
+    </tr>
+    </table><br>
+
+    <table border="1" width="400" height="400" cellpadding="20" cellspacing="20">
+    <tr>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+    </tr>
+    <tr>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+    </tr>
+    </table><br>
+
+    <table border="0" width="400" height="400" cellpadding="0" cellspacing="0">
+    <tr>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+    </tr>
+    <tr>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+      <td>  </td>
+      <td> <img src="../imagenes/img/fondos/fondo1.gif"> </td>
+    </tr>
+    </table><br>
+
+    <table border="1" width="400" height="400" cellpadding="20">
+    <tr>
+      <th> A </td>
+      <td> B </td>
+    </tr>
+    <tr>
+      <td align="right"> C </td>
+      <td valign="top"> D </td>
+    </tr>
+    </table><br>
+
+    <table border="1" width="70%" height="300" align="center" rules="groups"> <!-- Rules puede ser: rows/cols/none/all/grousp -->
+    <thead bgcolor="green">
+    <tr valign="center">
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </thead>
+    <tbody bgcolor="lightgreen">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </tbody>
+    <tfoot bgcolor="orange">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    </tfoot>
+    </table><br>
+
+  </body>
+</html>

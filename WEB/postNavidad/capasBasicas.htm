@@ -1,0 +1,44 @@
+<html>
+  <head>  
+    <style>
+      .capa1{
+        position: absolute;
+        top: 100px;
+        left: 100PX;
+        background-color:mediumslateblue;
+        width: 500px;
+        height: 200px;
+        z-index: 1; 
+      }
+    
+      .capa2{
+        position: absolute;
+        background-color: darkcyan;
+        width: 500px;
+        height: 200px;
+      }
+      .capa3{
+        top: 50px;
+        left: 50PX;
+        position: absolute;
+        background-color:peru;
+        width: 500px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  
+    
+  <body>
+    <!-- zindex es la pririd
+    en este caso el violeta 
+    es el primero que se dibuja pero 
+    aparece adelante por zindex-->
+    <div class="capa1">Hola</div>
+    
+    <div class="capa2">Hola</div>
+
+    <div class="capa3">Hola</div>
+
+  </body>
+</html>
