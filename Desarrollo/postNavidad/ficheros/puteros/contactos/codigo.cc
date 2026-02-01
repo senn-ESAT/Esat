@@ -141,7 +141,6 @@ void delContact(){
     else{
       printf("\nContact not found!");
     }
-  printf(" %d ", found);
   }
   else{
     printf("\nNo contacts found!");

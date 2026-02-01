@@ -6,35 +6,45 @@ struct TDato{
 };
 
 FILE *f;
-char *puntero = nullptr;
+TDato *puntero = nullptr;
 
 int main(){
   TDato valor;
 
   f = fopen("muestreo.dat", "rb");
-  int lineas = 1;
-
-  // todo esta mal
-
-  while(fread(&valor, sizeof(valor), 1, f)){
-    if(lineas == 1){
-      puntero = (char*)malloc(sizeof(valor.));
-    }
-    else{
-      puntero = (char*)realloc(puntero, lineas*sizeof(TDato));
-    }
-    lineas++;
-  }
-  fclose(f);
+  int lineas = 0;
 
   int year;
   printf("Nacimiento: ");
   scanf("%d", &year);
 
-  for(int i = 0; i < lineas; i++){
-    if()
+  if(f != NULL){
+    while(fread(&valor, sizeof(valor), 1, f) == 1){
+      // si multiplico x 0 se rompe pero necesito inicializar en 0 para futuros bucles
+      puntero = (TDato*)realloc(puntero, (lineas+1)*sizeof(TDato));
+      
+      if(puntero && year == (int)valor.nace){
+        
+        puntero[lineas] = valor;
+        lineas++;
+      }
+    }
+    fclose(f);
+  }
+  else{
+    printf("404");
   }
 
+  int altura = 0, peso = 0;
+
+  for(int i = 0; i < lineas; i++){
+    altura += (int)puntero[i].altura;
+    peso += (int)puntero[i].peso;
+  }
+
+  printf("Peso promedio es: %d y la altura es: %d", peso/lineas, altura/lineas);
+
   free(puntero); 
+  puntero = nullptr;
   return 0;
 }
