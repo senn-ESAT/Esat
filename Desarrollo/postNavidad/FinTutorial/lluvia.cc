@@ -21,6 +21,7 @@ struct form{
   char g = 0;
   char b = 0;
 };
+const int ScreenX = 800, ScreenY = 600;
 
 form *block = nullptr;
 
@@ -38,7 +39,6 @@ void NewObject(){
   char green = rand()%255;
   char blue = rand()%255;
 
-  printf("\n[lados]: %d[x]: %f[y]: %f[r]: %d[g]: %d [b]: %d\n", shape, x, y, red, green, blue);
 
   form newObj = {shape, x, y, red, green, blue};
   block = (form*)realloc(block, (nObject+1)*sizeof(form));
@@ -46,10 +46,17 @@ void NewObject(){
   nObject++;
 }
 
+void updatePosition(int index){
+  (block+index)->y += 4.0f;
+  if((block+index)->y >= ScreenY){
+    (block+index)->y = 0.0f;
+  }
+}
+
+
 void drawObject(int index){
   float *g_circle;
-  printf("preload ");
-  g_circle = (float*)malloc((block+index)->points*(sizeof(float)));
+  g_circle = (float*)malloc(2*(block+index)->points*(sizeof(float)));
 
   float angle_a = angle;
   float angle_b = 6.28f / (float) (block+index)->points;
@@ -57,7 +64,6 @@ void drawObject(int index){
   float sin_b = sinf(angle_b);
   float cos_a = cosf(angle_a);  // 1.0f
   float cos_b = cosf(angle_b);
-  printf("[presalvado] ");
   for(int i = 0; i < (block+index)->points; ++i){
     float sin_a_b = sin_a * cos_b + cos_a * sin_b;
     float cos_a_b = cos_a * cos_b - sin_a * sin_b;
@@ -66,42 +72,33 @@ void drawObject(int index){
     sin_a = sin_a_b;
     cos_a = cos_a_b;
   }
-  printf("[predibujp] ");
-  //esat::DrawSetStrokeColor((block+index)->r, (block+index)->g, (block+index)->b, 255);
-  esat::DrawSetFillColor(255, 0, 0, 255);
+  esat::DrawSetStrokeColor((block+index)->r, (block+index)->g, (block+index)->b);
+  esat::DrawSetFillColor((block+index)->r, (block+index)->g, (block+index)->b);
+
   esat::DrawSolidPath(g_circle, (block+index)->points);
-  printf("[cierre] ");
-  // free(g_circle);
-  // g_circle = nullptr;
-  printf("free ");
+  free(g_circle);
+  g_circle = nullptr;
 }
 
 int esat::main(int argc, char **argv) {
   srand(time(NULL));
-  esat::WindowInit(800,600);
+  esat::WindowInit(ScreenX, ScreenY);
   WindowSetMouseVisibility(true);
   
   while(esat::WindowIsOpened() && !esat::IsSpecialKeyDown(esat::kSpecialKey_Escape)) {
     esat::DrawBegin();
     esat::DrawClear(0,0,0);
-    printf("inicio - ");
     if(esat::MouseButtonDown(0) == 1){
-      printf("NEW - ");
       NewObject();
     }
     
-    if(nObject > 0){
-      printf("dibujo - ");
-      for(int i = 0; i < nObject; i++){
-        printf(" no: %d i: %d ",nObject, i);
-        //updatePosition();
-        drawObject(i);
-      }
+    for(int i = 0; i < nObject; i++){
+      updatePosition(i);
+      drawObject(i);
     }
       
     esat::DrawEnd();  	
   	esat::WindowFrame();
-    printf("end\n");  
   }
   esat::WindowDestroy();
   free(block);
