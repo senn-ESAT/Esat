@@ -5,6 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <esat/time.h>
 
 // click genera nueva forma
 // -> <-
@@ -16,6 +17,7 @@
 
 struct form{
   int points;    // 3 = triangle 4 = square
+  int speed;
   float x, y;   // coords
   char r = 0;
   char g = 0;
@@ -35,19 +37,20 @@ void NewObject(){
   int shape = 3 + rand()%2;
   float x = (float)esat::MousePositionX();
   float y = (float)esat::MousePositionY();
+  int speed = 2 + rand()%4;
   char red = rand()%255;
   char green = rand()%255;
   char blue = rand()%255;
 
 
-  form newObj = {shape, x, y, red, green, blue};
+  form newObj = {shape, speed, x, y, red, green, blue};
   block = (form*)realloc(block, (nObject+1)*sizeof(form));
   *(block+nObject) = newObj;
   nObject++;
 }
 
 void updatePosition(int index){
-  (block+index)->y += 4.0f;
+  (block+index)->y += (block+index)->speed;
   if((block+index)->y >= ScreenY){
     (block+index)->y = 0.0f;
   }
@@ -80,6 +83,10 @@ void drawObject(int index){
   g_circle = nullptr;
 }
 
+double current_time = 0.0;
+double last_time = 0.0;
+double fps = 24.0;
+
 int esat::main(int argc, char **argv) {
   srand(time(NULL));
   esat::WindowInit(ScreenX, ScreenY);
@@ -95,10 +102,25 @@ int esat::main(int argc, char **argv) {
     for(int i = 0; i < nObject; i++){
       updatePosition(i);
       drawObject(i);
+      if(IsKeyPressed('x') || IsKeyPressed('X')){
+        radius += 0.1f;
+      }
+      if(IsKeyPressed('z') || IsKeyPressed('Z')){
+        if(radius > 8.0f){
+          radius -= 0.01f;
+        }
+      }
+      if(IsKeyPressed(' ')){
+        angle += 0.1f;
+      }
     }
       
     esat::DrawEnd();  	
   	esat::WindowFrame();
+
+    do {
+      current_time = esat::Time();
+    } while((current_time - last_time) <= 1000.0 / fps);
   }
   esat::WindowDestroy();
   free(block);
