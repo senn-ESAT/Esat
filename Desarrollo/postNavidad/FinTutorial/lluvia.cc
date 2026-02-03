@@ -112,21 +112,21 @@ void drawObject(int index){
   g_circle = nullptr;
 }
 
-void radioUpdate(){
+void singleVerification(){
   if(esat::IsKeyPressed('x') || esat::IsKeyPressed('X')){
     radius += 0.5f;
   }
   if(esat::IsKeyPressed('z') || esat::IsKeyPressed('Z') && radius > 8.0f){
     radius -= 0.5f;
   }
-}
-
-void saving(){
-  f = fopen("save.dat", "wb");
-  for(int i = 0; i < nObject; i++){
-    fwrite((block+i), sizeof(form), 1, f);
+  if(esat::MouseButtonDown(0) == 1){
+    bool tri = true;
+    NewObject(tri);
   }
-  fclose(f);
+  if(esat::MouseButtonDown(1) == 1){
+    bool tri = false;
+    NewObject(tri);
+  }
 }
 
 void loadFromFile(){
@@ -137,6 +137,19 @@ void loadFromFile(){
       addingObj(valor);
     }
     fclose(f);
+  }
+}
+
+void fileMenegement(){
+  if(esat::IsKeyPressed('s') || esat::IsKeyPressed('S')){
+    f = fopen("save.dat", "wb");
+    for(int i = 0; i < nObject; i++){
+      fwrite((block+i), sizeof(form), 1, f);
+    }
+    fclose(f);
+  }
+  if(esat::IsKeyPressed('d') || esat::IsKeyPressed('D')){
+      remove("save.dat");
   }
 }
 
@@ -152,16 +165,7 @@ int esat::main(int argc, char **argv) {
     esat::DrawBegin();
     esat::DrawClear(0,0,0);
 
-    if(esat::MouseButtonDown(0) == 1){
-      bool tri = true;
-      NewObject(tri);
-    }
-    if(esat::MouseButtonDown(1) == 1){
-      bool tri = false;
-      NewObject(tri);
-    }
-
-    radioUpdate();
+    singleVerification();
 
     for(int i = 0; i < nObject; i++){
       verifyInputs(i);
@@ -172,9 +176,7 @@ int esat::main(int argc, char **argv) {
     esat::DrawEnd();  	
   	esat::WindowFrame();
     
-    if(esat::IsKeyPressed('s') || esat::IsKeyPressed('S')){
-      saving();
-    }
+    fileMenegement();
 
     do {
       current_time = esat::Time();
