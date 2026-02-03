@@ -7,61 +7,90 @@
 #include <time.h>
 #include <esat/time.h>
 
-// click genera nueva forma
-// -> <-
-// z -- x ++
-// s salva
-// [space] rota antiorario
-
-// salva objetos, posicion y angulo 
-
 struct form{
-  int points;    // 3 = triangle 4 = square
+  int points;     // 3 = triangle 4 = square
   int speed;
-  float x, y;   // coords
+  float angle;   
+  float x, y;     // coords
   char r = 0;
   char g = 0;
   char b = 0;
 };
+
 const int ScreenX = 800, ScreenY = 600;
-
-form *block = nullptr;
-
+double current_time = 0.0;
+double last_time = 0.0;
+double fps = 60.0;
 float radius = 10.0f;   // radio 
-float angle = 0.0f;   
-const int Speed = 4;  // 4 px every frame
 int nObject = 0;
 
+form *block = nullptr;
+FILE *f;
 
-void NewObject(){
-  int shape = 3 + rand()%2;
-  float x = (float)esat::MousePositionX();
-  float y = (float)esat::MousePositionY();
-  int speed = 2 + rand()%4;
-  char red = rand()%255;
-  char green = rand()%255;
-  char blue = rand()%255;
-
-
-  form newObj = {shape, speed, x, y, red, green, blue};
+void addingObj(form obj){
   block = (form*)realloc(block, (nObject+1)*sizeof(form));
-  *(block+nObject) = newObj;
+  *(block+nObject) = obj;
   nObject++;
 }
 
-void updatePosition(int index){
+void NewObject(bool triangle){
+  int shape;
+  if(triangle){
+    shape = 3;
+  }
+  else{
+    shape = 4;
+  }
+  int speed = 2 + rand()%4; // 2-5
+  float degrees = 0.0f;
+  float x = (float)esat::MousePositionX();
+  float y = (float)esat::MousePositionY();
+  char red = rand()%255;
+  char green = rand()%255;
+  char blue = rand()%255;
+  
+  form newObj = {shape, speed, degrees, x, y, red, green, blue};
+  addingObj(newObj);
+}
+
+void verifyInputs(int index){
   (block+index)->y += (block+index)->speed;
-  if((block+index)->y >= ScreenY){
-    (block+index)->y = 0.0f;
+
+  if(esat::IsSpecialKeyPressed(esat::kSpecialKey_Right)){
+    (block+index)->x += (block+index)->speed;
+  }
+  if(esat::IsSpecialKeyPressed(esat::kSpecialKey_Left)){
+    (block+index)->x -= (block+index)->speed;
+  }
+  if(esat::IsKeyPressed(' ')){
+    (block+index)->angle += 0.05f;
   }
 }
 
+void checkBorderColision(int index){
+  if((block+index)->y >= ScreenY){
+    if(esat::IsKeyPressed('c') || esat::IsKeyPressed('C')){
+      (block+index)->y = ScreenY;  
+    }
+    else{
+      (block+index)->y = 0.0f;
+    }
+  }
+
+  if((block+index)->x >= ScreenX){
+    (block+index)->x = 0.0f;
+  }
+
+  if((block+index)->x < 0.0f){
+    (block+index)->x = ScreenX;
+  }
+}
 
 void drawObject(int index){
   float *g_circle;
   g_circle = (float*)malloc(2*(block+index)->points*(sizeof(float)));
 
-  float angle_a = angle;
+  float angle_a = (block+index)->angle;
   float angle_b = 6.28f / (float) (block+index)->points;
   float sin_a = sinf(angle_a);  // 0.0f
   float sin_b = sinf(angle_b);
@@ -77,46 +106,75 @@ void drawObject(int index){
   }
   esat::DrawSetStrokeColor((block+index)->r, (block+index)->g, (block+index)->b);
   esat::DrawSetFillColor((block+index)->r, (block+index)->g, (block+index)->b);
-
+  
   esat::DrawSolidPath(g_circle, (block+index)->points);
   free(g_circle);
   g_circle = nullptr;
 }
 
-double current_time = 0.0;
-double last_time = 0.0;
-double fps = 24.0;
+void radioUpdate(){
+  if(esat::IsKeyPressed('x') || esat::IsKeyPressed('X')){
+    radius += 0.5f;
+  }
+  if(esat::IsKeyPressed('z') || esat::IsKeyPressed('Z') && radius > 8.0f){
+    radius -= 0.5f;
+  }
+}
+
+void saving(){
+  f = fopen("save.dat", "wb");
+  for(int i = 0; i < nObject; i++){
+    fwrite((block+i), sizeof(form), 1, f);
+  }
+  fclose(f);
+}
+
+void loadFromFile(){
+  f = fopen("save.dat", "rb");
+  if(f != NULL){
+    form valor;
+    while(fread(&valor, sizeof(form), 1, f)){
+      addingObj(valor);
+    }
+    fclose(f);
+  }
+}
 
 int esat::main(int argc, char **argv) {
   srand(time(NULL));
   esat::WindowInit(ScreenX, ScreenY);
   WindowSetMouseVisibility(true);
-  
+
+  loadFromFile();
+
   while(esat::WindowIsOpened() && !esat::IsSpecialKeyDown(esat::kSpecialKey_Escape)) {
+    last_time = esat::Time();
     esat::DrawBegin();
     esat::DrawClear(0,0,0);
+
     if(esat::MouseButtonDown(0) == 1){
-      NewObject();
+      bool tri = true;
+      NewObject(tri);
+    }
+    if(esat::MouseButtonDown(1) == 1){
+      bool tri = false;
+      NewObject(tri);
+    }
+
+    radioUpdate();
+
+    for(int i = 0; i < nObject; i++){
+      verifyInputs(i);
+      checkBorderColision(i);
+      drawObject(i);
     }
     
-    for(int i = 0; i < nObject; i++){
-      updatePosition(i);
-      drawObject(i);
-      if(IsKeyPressed('x') || IsKeyPressed('X')){
-        radius += 0.1f;
-      }
-      if(IsKeyPressed('z') || IsKeyPressed('Z')){
-        if(radius > 8.0f){
-          radius -= 0.01f;
-        }
-      }
-      if(IsKeyPressed(' ')){
-        angle += 0.1f;
-      }
-    }
-      
     esat::DrawEnd();  	
   	esat::WindowFrame();
+    
+    if(esat::IsKeyPressed('s') || esat::IsKeyPressed('S')){
+      saving();
+    }
 
     do {
       current_time = esat::Time();
