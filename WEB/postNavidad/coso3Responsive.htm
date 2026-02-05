@@ -1,42 +1,61 @@
 <html>
   <head>
+
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+
     <style>
-      .header{
-        width: 960px;
+      body{
+        width: 90%;
+        margin: 0 auto;
+      }
+      header{
         height: 50px;
         background-color: cadetblue;
         color:aliceblue;
         font-size: large;
         text-align: center;
-                
       }
-      .Lcontent{
-        width: 640px;
-        height: 500px;
-        float:left;
-        background-color: antiquewhite;
-      }
-      .Rcontent{
-        width: 320px;
-        height: 500px;
-        float:left;
-        background-color: antiquewhite;
-      }
-      .footer{
+      footer{
         height: 50px;
-        width: 960px;
         background-color: cadetblue;
         clear:both;
+      }
+      p{padding: 5px;}
+
+      .Lcontent, .Rcontent{
+        background-color: antiquewhite;
+        height: 500px;
+      }
+      .Lcontent{
+        width: 60%;
+        float:left;
+      }
+      .Rcontent{
+        width: 40%;
+        float:right;
       }
       .textNext{
         float: left;
         padding: 10px;
       }
+      /*960px*/
+      @media only screen (min-width: 770px){
+
+      }
+      @media only screen (min-width: 481px) and (max-width: 769px){
+        .Rcontent{
+          clear: both;
+        }
+      }
+      @media only screen (max-width: 480px){
+
+      }
+
     </style>
   </head>
   <body>
 
-    <div class="header"> HISTORIA DE LOS VIDEOJUEGOS</div>
+    <header class="header"> HISTORIA DE LOS VIDEOJUEGOS</header>
 
     <div class="Lcontent">
       <p >
@@ -49,15 +68,15 @@
       </p>
     </div>
 
-    <div class="Rcontent">
+    <aside class="Rcontent">
       <p>
-        <img src="./img/logo300.jpg" class="textNext" style="float:right;">
+        <img src="./img/logo300.jpg" class="textNext">
         Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices habitasse sem at eros purus tellus, enim posuere arcu iaculis consequat laoreet taciti cursus tempor magnis mattis aenean feugiat. At felis tristique elementum enim mollis auctor vivamus pretium facilisi conubia aliquet, sodales placerat ornare semper eu urna nam mi natoque nisl. Mattis porta tristique diam integer hac tellus vulputate nullam, mus ultrices aptent ullamcorper justo conubia dignissim mauris pretium, purus per habitasse id nisi molestie quisque.
       </p>
-    </div>
+    </aside>
 
-    <div class="footer">
-    </div>
+    <footer class="footer">
+    </footer>
 
   </body>
 </html>

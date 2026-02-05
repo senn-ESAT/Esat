@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <style>
+      
+      html{
+        background-color: blanchedalmond;
+      }
+      body{
+        width: 960px;
+        margin: 0 auto;
+      }
+      .hola{
+        height: 35%;
+        background-color: yellow;
+      }
+      
+      /*pantalla*/
+      @media only screen and (min-width: 769px){
+
+      }
+        
+      /*Tablet*/
+      @media only screen and (min-width: 481px) and (max-width: 768px){
+        .hola{
+          background-color: red;
+        }      
+      }
+      /*Movil*/
+      @media only screen and (max-width: 480px){
+        .hola{
+          background-color: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hola"> HOLA </div>
+  </body>
+</html>
