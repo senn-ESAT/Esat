@@ -11,7 +11,7 @@
 const unsigned int kWindowWidth = 800;
 const unsigned int kWindowHeight = 600;
 
-const int knPoints = 6;
+const int knPoints = 30;
 float g_circle[knPoints*2];
 
 void InitCircle(){
