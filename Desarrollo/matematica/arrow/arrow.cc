@@ -8,16 +8,24 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include "./2D/example_demo.cc"
 
 const unsigned int ScreenX = 800;
 const unsigned int ScreenY = 600;
-
+  struct Vec2 {
+    float x, y;
+  };
 esat::Vec2 calculoPrimaria(){
   esat::Vec2 mouse;
   mouse.x = esat::MousePositionX();
   mouse.y =  esat::MousePositionY();
+  return mouse;
 }
+
+  Vec2 subVec2(Vec2 v1, Vec2 v2){
+    Vec2 temp = {{v1.x - v2.x}, {v1.y - v2.y}};
+    return temp;
+  }
+
 
 int esat::main(int argc, char** argv) {
   srand(time(nullptr));
@@ -28,15 +36,17 @@ int esat::main(int argc, char** argv) {
   esat::WindowInit(ScreenX, ScreenY);
   esat::WindowSetMouseVisibility(true);
 
-  esat::Vec2 centro = {ScreenX/2, ScreenY/2}, mouse, primaria;
+  Vec2 centro = {ScreenX/2, ScreenY/2}, mouse, primaria;
   
   while (!esat::IsSpecialKeyDown(esat::kSpecialKey_Escape) && esat::WindowIsOpened()) {
       last_time = esat::Time();
       esat::DrawBegin();
       esat::DrawClear(0, 0, 0);
+      esat::DrawSetStrokeColor(255,255,255);
 
       mouse = calculoPrimaria();
-      primaria = MM::subVec2(mouse, centro);
+      //primaria = subVec2(mouse, centro);
+      esat::DrawLine(centro.x, centro.y, mouse.x, mouse.y);
 
       esat::DrawEnd();
       esat::WindowFrame();

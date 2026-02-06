@@ -53,9 +53,8 @@ namespace MM {
   Algún método de “print”   v
   Normalizar un vector    v
   ¿Está normalizado?    v
-  Perpendicular 2D método 1 
-  Perpendicular 2D método 2
-  ¿Algún método de inicialización?
+  Perpendicular 2D método 1 ???
+  Perpendicular 2D método 2 ???
   */
   
   // ---------- VECTOR ----------
@@ -133,11 +132,37 @@ namespace MM {
 
   // - NORM -
 
-  bool isNormalized (Vec2 v){
+  bool isVec2Normalized (Vec2 v){
     if(magnitudeV2(v) > 0.95f && magnitudeV2(v) < 1.05f){
       return true;
     }
     return false;
+  }
+
+  bool isVec3Normalized (Vec3 v){
+    if(magnitudeV3(v) > 0.95f && magnitudeV3(v) < 1.05f){
+      return true;
+    }
+    return false;
+  }
+
+  bool isVec4Normalized (Vec4 v){
+    if(magnitudeV4(v) > 0.95f && magnitudeV4(v) < 1.05f){
+      return true;
+    }
+    return false;
+  }
+
+  // - Perpendicular 2D -
+  
+  Vec2 perp2D1(Vec2 v){
+    Vec2 temp = {{-v.y}, {v.x}};
+    return temp;
+  }
+
+  Vec2 perp2D2(Vec2 v){
+    Vec2 temp = {{v.y}, {-v.x}};
+    return temp;
   }
 
   // - PRINT -
@@ -156,10 +181,10 @@ namespace MM {
 
   /*
   --- Mat
-  Suma de matrices 
-  Resta de matrices
-  Multiplicación por un escalar 
-  División por un escalar
+  Suma de matrices  v
+  Resta de matrices   v
+  Multiplicación por un escalar   v
+  División por un escalar   v
   Multiplicación de matrices 
   Vector por matriz
   Algún método de “print” 
@@ -168,7 +193,123 @@ namespace MM {
   */
 
   // ---------- MAT ----------
+
+  // - SUM - 
   
+  Mat2 sumMat2(Mat2 m1, Mat2 m2){
+    Mat2 temp;
+    for(int i = 0; i < 4; i++){
+      temp.m[i] = m1.m[i]+m2.m[i];
+    }
+    return temp;
+  }
+
+  Mat3 sumMat3(Mat3 m1, Mat3 m2){
+    Mat3 temp;
+    for(int i = 0; i < 9; i++){
+      temp.m[i] = m1.m[i]+m2.m[i];
+    }
+    return temp;
+  }
+
+  Mat4 sumMat4(Mat4 m1, Mat4 m2){
+    Mat4 temp;
+    for(int i = 0; i < 16; i++){
+      temp.m[i] = m1.m[i]+m2.m[i];
+    }
+    return temp;
+  }
+
+  // - SUB - 
+
+  Mat2 subMat2(Mat2 m1, Mat2 m2){
+    Mat2 temp;
+    for(int i = 0; i < 4; i++){
+      temp.m[i] = m1.m[i]-m2.m[i];
+    }
+    return temp;
+  }
+
+  Mat3 subMat3(Mat3 m1, Mat3 m2){
+    Mat3 temp;
+    for(int i = 0; i < 9; i++){
+      temp.m[i] = m1.m[i]-m2.m[i];
+    }
+    return temp;
+  }
+
+  Mat4 subMat4(Mat4 m1, Mat4 m2){
+    Mat4 temp;
+    for(int i = 0; i < 16; i++){
+      temp.m[i] = m1.m[i]-m2.m[i];
+    }
+    return temp;
+  }
+
+  // - MAT x NUM -
+
+  Mat2 scaleM2(Mat2 m1, float n){
+    Mat2 temp;
+    for(int i = 0; i < 4; i++){
+      temp.m[i] = m1.m[i]*n;
+    }
+    return temp;
+  }
+    
+  Mat3 scaleM3(Mat3 m1, float n){
+    Mat3 temp;
+    for(int i = 0; i < 9; i++){
+      temp.m[i] = m1.m[i]*n;
+    }
+    return temp;
+  }  
+  
+  Mat4 scaleM4(Mat4 m1, float n){
+    Mat4 temp;
+    for(int i = 0; i < 16; i++){
+      temp.m[i] = m1.m[i]*n;
+    }
+    return temp;
+  }
+
+  // - MAT / NUM - 
+
+  Mat2 divM2(Mat2 m1, float n){
+    Mat2 temp;
+    for(int i = 0; i < 4; i++){
+      temp.m[i] = m1.m[i]/n;
+    }
+    return temp;
+  }
+    
+  Mat3 divM3(Mat3 m1, float n){
+    Mat3 temp;
+    for(int i = 0; i < 9; i++){
+      temp.m[i] = m1.m[i]/n;
+    }
+    return temp;
+  }  
+  
+  Mat4 divM4(Mat4 m1, float n){
+    Mat4 temp;
+    for(int i = 0; i < 16; i++){
+      temp.m[i] = m1.m[i]/n;
+    }
+    return temp;
+  }
+
+  // - MAT x MAT -
+
+  Mat2 Mat2multiplication(Mat2 m1, Mat2 m2){
+  Mat2 temp;
+
+    //???????????????????
+
+  }
+
+
+
+
 
   // ---------- COMBO ----------
 
