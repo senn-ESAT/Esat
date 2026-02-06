@@ -45,14 +45,14 @@ namespace MM {
   /*
   TO_DO
 --- Vect
-  Suma de vectores 
-  Resta de vectores
-  Multiplicación por un escalar 
-  División por un escalar
-  hipotenusa 
-  Algún método de “print”
-  Normalizar un vector (dividir por hipotenusa)
-  ¿Está normalizado?
+  Suma de vectores    v
+  Resta de vectores   v
+  Multiplicación por un escalar   v 
+  División por un escalar   v
+  hipotenusa    v
+  Algún método de “print”   v
+  Normalizar un vector    v
+  ¿Está normalizado?    v
   Perpendicular 2D método 1 
   Perpendicular 2D método 2
   ¿Algún método de inicialización?
@@ -115,47 +115,29 @@ namespace MM {
 
   float magnitudeV2(Vec2 v1){
     float temp;
-    temp = sqrtf(v1.x * v1.x + v1.y * v1.y);
+    temp = sqrtf(v1.x*v1.x + v1.y*v1.y);
     return temp;
   }
 
   float magnitudeV3(Vec3 v1){
     float temp;
-    temp = sqrtf(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z);
+    temp = sqrtf(v1.x*v1.x + v1.y*v1.y + v1.z*v1.z);
     return temp;
   }
 
   float magnitudeV4(Vec4 v1){
     float temp;
-    temp = sqrtf(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z + v1.w * v1.w);
+    temp = sqrtf(v1.x*v1.x + v1.y*v1.y + v1.z*v1.z + v1.w*v1.w);
     return temp;
   }
 
   // - NORM -
 
-  bool isV2Norm (Vec2 v){
-    if(v.x > 0.95f && v.x < 1.05f && 
-       v.y > 0.95f && v.y < 1.05f){
+  bool isNormalized (Vec2 v){
+    if(magnitudeV2(v) > 0.95f && magnitudeV2(v) < 1.05f){
       return true;
     }
     return false;
-  }
-
-  bool isV3Norm (Vec3 v){
-    if(v.x > 0.95f && v.x < 1.05f && 
-       v.y > 0.95f && v.y < 1.05f &&
-       v.z > 0.95f && v.z < 1.05f ){
-      return true;
-    }
-    return false;
-  }
-
-  Vec2 normalizeV2 (Vect v1){
-    float hipo = magVec2(v);
-    Vec2 temp = {{v.x/hipo}, {v.y/hipo}};
-    if(temp.x >0.95f && temp.x < 1.05f){
-
-    }
   }
 
   // - PRINT -
