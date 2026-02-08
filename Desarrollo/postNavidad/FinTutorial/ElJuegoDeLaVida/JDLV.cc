@@ -7,6 +7,11 @@
 #include <esat/window.h>
 #include <esat/input.h>
 
+struct cord{
+  
+};
+
+
 bool *Block = nullptr;
 int Screen = 800, fps = 10;
 double current_time, last_time;
@@ -24,16 +29,29 @@ void generacionBichos(){
     if(rand()%2 == 0){
       bicho = true;
     }
-    Block = (bool*)realloc(bool, (i+1)*sizeof(bool));
+    Block = (bool*)realloc(Block, (i+1)*sizeof(bool));
     *(Block+i) = bicho;
   }
 }
 
 void dibujarBicho(){
-  for(int i = 0; i < nBichos*2; i++){
+  int filas = -1;
+  for(int i = 0; i < nBichos*nBichos; i++){
+    if(i%70 == 0){
+      filas++;
+    }
     if((Block+i)){
+      float y1 = espacionBichos * filas;
+      float y2 = y1 + espacionBichos;
+      float x1 = espacionBichos*(i%70);
+      float x2
+
+      float *cuadrado;
+      cuadrado = (float*)malloc(cuadrado, sizeof(float));
+
+
       esat::DrawSetFillColor(255,0,0);
-      
+      esat::DrawSolidPath(cuadrado, 5);
     }
   }
 }

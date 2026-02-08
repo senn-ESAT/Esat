@@ -65,11 +65,29 @@ void drawBalls(int index, esat::SpriteHandle image){
   esat::DrawSprite(image, (Block+index)->x, (Block+index)->y);
 }
 
+int CambioDir(int index){
+  switch((Block+index)->dir){
+    case 0:
+      return 3;
+    break;
+    case 1:
+      return 2;
+    break;    
+    case 2:
+      return 1;
+    break;    
+    case 3:
+      return 0;
+    break;
+  }
+  return 0;
+}
+
 bool chechBallsColision(int actual, int x1, int y1, int x2, int y2){
   for(int i = 0; i < nBalls; i++){
     if((Block+i)-> x >= x1 && (Block+i)-> x <= x2 &&
        (Block+i)-> y >= y1 && (Block+i)-> y <= y2 && i != actual){
-      (Block+i)->dir = (Block+i)->dir-=1;
+      (Block+i)->dir = (Block+i)->dir = CambioDir(i);
       if((Block+i)->dir < 0 ){(Block+i)->dir = 3;}
       return true;
     }
@@ -128,8 +146,7 @@ void moveBalls(int index){
       }
       // if colision bottom
       else if((Block+index)->y+esat::SpriteHeight(ball1) > ScreenY){
-        (Block+index)->dir = (Block+index)->dir-1;
-        if((Block+index)->dir < 0){(Block+index)->dir = 3;}
+        (Block+index)->dir = (Block+index)->dir = CambioDir(index);
       }
     break;
   }

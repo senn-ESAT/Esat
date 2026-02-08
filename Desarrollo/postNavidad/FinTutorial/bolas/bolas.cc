@@ -121,13 +121,13 @@ void moveBalls(int index){
   }
 }
 
-void fpsControl(){
+void fpsControl(int &ani){
   do {
     current_time = esat::Time();
   } while((current_time - last_time) <= 1000.0 / fps);
-  animation ++;
-  if(animation%fps == 0){
-    animation = 0;
+  ani ++;
+  if(ani%fps == 0){
+    ani = 0;
   }
 }
 
@@ -168,7 +168,7 @@ int esat::main(int argc, char **argv) {
       esat::DrawEnd();  	
       esat::WindowFrame();
       
-      fpsControl();
+      fpsControl(animation);
     }
     esat::WindowDestroy();
     freeSprites();
