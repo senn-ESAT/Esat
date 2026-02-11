@@ -8,18 +8,31 @@
         width: 90%;
         margin: 0 auto;
       }
+
       header{
-        height: 50px;
+        height: auto;
         background-color: cadetblue;
         color:aliceblue;
         font-size: large;
         text-align: center;
+        font-size: 30pt;
       }
+
       footer{
-        height: 50px;
+        text-align: center;
+        color: bisque;
+        height: auto;
         background-color: cadetblue;
         clear:both;
+
       }
+
+      footer ul li{
+        display: inline;
+        color:bisque;
+        font-weight: 200;
+      }
+
       p{padding: 5px;}
 
       .Lcontent, .Rcontent{
@@ -39,16 +52,26 @@
         padding: 10px;
       }
       /*960px*/
-      @media only screen (min-width: 770px){
+      @media only screen and (min-width: 770px){
 
       }
-      @media only screen (min-width: 481px) and (max-width: 769px){
-        .Rcontent{
+      @media only screen and (min-width: 481px) and (max-width: 769px){
+        .Rcontent, .Lcontent{
           clear: both;
+          width: 100%;
         }
       }
-      @media only screen (max-width: 480px){
-
+      @media only screen and (max-width: 480px){
+        .Rcontent, .Lcontent, .textNext{
+          height: auto;
+          clear: both;
+        }
+        .Rcontent, .Lcontent{
+          width: 100%;
+        }
+        .textNext{
+          width: 90%;
+        }
       }
 
     </style>
@@ -61,7 +84,7 @@
       <p >
         <img src="./img/logo111.jpg" class="textNext">
         Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices habitasse sem at eros purus tellus, enim posuere arcu iaculis consequat laoreet taciti cursus tempor magnis mattis aenean feugiat. At felis tristique elementum enim mollis auctor vivamus pretium facilisi conubia aliquet, sodales placerat ornare semper eu urna nam mi natoque nisl. Mattis porta tristique diam integer hac tellus vulputate nullam, mus ultrices aptent ullamcorper justo conubia dignissim mauris pretium, purus per habitasse id nisi molestie quisque.
-      </p>
+      </p><br>
       <p>
         <img src="./img/logo6.jpg" class="textNext">
         Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices habitasse sem at eros purus tellus, enim posuere arcu iaculis consequat laoreet taciti cursus tempor magnis mattis aenean feugiat. At felis tristique elementum enim mollis auctor vivamus pretium facilisi conubia aliquet, sodales placerat ornare semper eu urna nam mi natoque nisl. Mattis porta tristique diam integer hac tellus vulputate nullam, mus ultrices aptent ullamcorper justo conubia dignissim mauris pretium, purus per habitasse id nisi molestie quisque.
@@ -76,6 +99,13 @@
     </aside>
 
     <footer class="footer">
+      <h5>TODOS LOS DERECHOS RESERVADOS ESAT</h5>
+      <ul>
+        <li>Quiénes somos</li>
+        <li>Carrera</li>
+        <li>Alumnos</li>
+        <li>Proyectos</li>
+      </ul>
     </footer>
 
   </body>
