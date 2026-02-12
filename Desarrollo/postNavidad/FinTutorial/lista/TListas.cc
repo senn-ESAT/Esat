@@ -1,6 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+enum Posicion{
+  actual,
+  proximo
+};
+
 struct TLista{
   int info;
   TLista *prox;
@@ -25,15 +30,44 @@ void MuestraLista(TLista *lista){
     printf(" %d, ", p->info);
   }
 }
-// TO-DO no funcica
+
 TLista* IndexaLista(TLista *lista, int posicion){
   TLista *p = nullptr;
-  for(int i = 0; i < posicion && lista != nullptr; lista = lista->prox){
-    if(i = posicion){
+  for(int i = 0; i <= posicion && lista != nullptr; lista = lista->prox){
+    if(i == posicion){
       p = lista;
     }
     i++;
   }
-  printf(" %d ", p->info);
+
   return p;
+}
+
+TLista* BuscarLista(TLista *lista, int n, Posicion actual){
+  TLista *aux;
+
+  for(aux = lista; aux != nullptr; aux = aux->prox){
+    if(aux->info == n)
+      return aux;
+  }
+  return aux;
+} 
+
+void EliminaEnLista(TLista **lista, int n){
+  TLista *aux = nullptr;
+  TLista *anterior = nullptr;
+  TLista *respuesta = nullptr;
+  aux = *lista;
+
+  while(aux->prox != nullptr){
+    if(aux->info == n){
+      anterior->prox = aux->prox;
+    }
+    
+    anterior = aux;
+    aux = aux->prox;
+  }
+  (*lista) = respuesta;
+  // free(respuesta);
+  // respuesta = nullptr;
 }
