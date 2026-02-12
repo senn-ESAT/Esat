@@ -7,22 +7,27 @@
 #include <esat/window.h>
 #include <esat/input.h>
 
-struct Coords{
-  float x,y, x1,y1, x2,y2, x3,y3, x4,y4;
+struct Pos{
+      //x    y
+  int  col, row;
 };
+
 struct Cuadricula{
-  Coords dimension;
+  Pos dimension;
   bool vive;
 };
+
 struct WorldsSetting{
   float espacioBichos;
   int nBichos;
   int v1 = NULL,v2 = NULL,v3 = NULL;
   int m1 = NULL,m2 = NULL,m3 = NULL;
 };
+
 struct Mouse{
   float x, y;
 };
+
 Mouse mouse;
 Cuadricula *Block = nullptr;
 int Screen = 800, fps = 10;
@@ -35,8 +40,8 @@ double current_time, last_time;
 
 void clickCheck(bool no){
   if(no){
-    mouse.x = (float)MousePositionX();
-    mouse.y = (float)MousePositionX();
+    mouse.x = (float)esat::MousePositionX();
+    mouse.y = (float)esat::MousePositionX();
   }
 }
 
@@ -45,45 +50,37 @@ void generacionBichos(){
   int col = 0;
   for(int i = 0; i < WS.nBichos*WS.nBichos; i++){
     bool bicho = false;
-
-    float startCol = col*WS.espacioBichos;
-    float startRow = filas*WS.espacioBichos;
-    
     if(i%WS.nBichos == 0){filas++; col=0;}
     if(rand()%2 == 0){bicho = true;}
-    
-    Coords pos = {
-      startCol, startRow, 
-      startCol+WS.espacioBichos, startRow, 
-      startCol+WS.espacioBichos, startRow+WS.espacioBichos,
-      startCol, startRow+WS.espacioBichos,
-      startCol, startRow
-    };
+    Pos position = {col, filas};
     
     Block = (Cuadricula*)realloc(Block, (i+1)*sizeof(Cuadricula));
-    (Block+i)->dimension = pos;
+    (Block+i)->dimension = position;
     (Block+i)->vive = bicho;
     col++;
   }
-  printf("[NFILAS]: %d\n\n", filas);
 }
 
+// SE rompe TO-DO
 void dibujarBicho(){
   float *array = nullptr;
+  array = (float*)malloc(10*sizeof(float));
+  
   for(int i = 0; i < WS.nBichos*WS.nBichos; i++){
     if((Block+i)->vive == true){
-
-      array = (float*)malloc(10*sizeof(float));
-      *(array) = (Block+i)->dimension.x;
-      *(array+1) = (Block+i)->dimension.y;
-      *(array+2) = (Block+i)->dimension.x1;
-      *(array+3) = (Block+i)->dimension.y1;
-      *(array+4) = (Block+i)->dimension.x2;
-      *(array+5) = (Block+i)->dimension.y2;
-      *(array+6) = (Block+i)->dimension.x3;
-      *(array+7) = (Block+i)->dimension.y3;
-      *(array+8) = (Block+i)->dimension.x4;
-      *(array+9) = (Block+i)->dimension.y4;
+      float startCol = (Block+i)->dimension.col*WS.espacioBichos;
+      float startRow = (Block+i)->dimension.row*WS.espacioBichos;
+      
+      *(array) = startCol;
+      *(array+1) = startRow;
+      *(array+2) = startCol+WS.espacioBichos;
+      *(array+3) = startRow;
+      *(array+4) = startCol+WS.espacioBichos;
+      *(array+5) = startRow+WS.espacioBichos;
+      *(array+6) = startCol;
+      *(array+7) = startRow+WS.espacioBichos;
+      *(array+8) = startCol;
+      *(array+9) = startRow;
 
       esat::DrawSetFillColor(255,0,0);
       esat::DrawSolidPath(array, 5);
@@ -133,10 +130,11 @@ int esat::main(int argc, char **argv) {
       last_time = esat::Time();
       esat::DrawBegin();
       esat::DrawClear(0,0,0);
-      si = MouseButtonPressed(0);
-      
-      clickCheck(si);
+      //si = MouseButtonPressed(0);
+      printf("a");
+      //clickCheck(si);
       dibujarBicho();
+      printf("b");
 
       esat::DrawEnd();  	
       esat::WindowFrame();
