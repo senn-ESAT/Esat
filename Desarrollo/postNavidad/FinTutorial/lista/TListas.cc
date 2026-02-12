@@ -54,20 +54,26 @@ TLista* BuscarLista(TLista *lista, int n, Posicion actual){
 } 
 
 void EliminaEnLista(TLista **lista, int n){
-  TLista *aux = nullptr;
-  TLista *anterior = nullptr;
-  TLista *respuesta = nullptr;
+  TLista *aux;
+  TLista *proximo;
   aux = *lista;
+  do{
+    printf("a");
+    proximo = aux->prox;
 
-  while(aux->prox != nullptr){
     if(aux->info == n){
-      anterior->prox = aux->prox;
+      aux->info = proximo->info;
+      aux->prox = proximo->prox;
     }
-    
-    anterior = aux;
-    aux = aux->prox;
-  }
-  (*lista) = respuesta;
-  // free(respuesta);
-  // respuesta = nullptr;
+
+    if(proximo->info == n){
+      printf("b");
+
+      aux->prox = proximo->prox;
+    }
+    else{
+      printf("c");
+      aux = aux->prox;
+    }
+  }while(aux->prox != nullptr);
 }
