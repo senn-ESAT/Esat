@@ -6,6 +6,7 @@
 #include <esat/draw.h>
 #include <esat/window.h>
 #include <esat/input.h>
+#include <esat/math.h>
 
 struct Pos{
       //x    y
@@ -20,48 +21,68 @@ struct Cuadricula{
 struct WorldsSetting{
   float espacioBichos;
   int nBichos;
-  int v1 = NULL,v2 = NULL,v3 = NULL;
-  int m1 = NULL,m2 = NULL,m3 = NULL;
+  int v1 = NULL,v2 = NULL,v3 = NULL;  // vive
+  int n1 = NULL,n2 = NULL,n3 = NULL;  // nace
+  bool update = false;
 };
 
-struct Mouse{
-  float x, y;
-};
-
-Mouse mouse;
+esat::Vec2 mouse;
 Cuadricula *Block = nullptr;
-int Screen = 800, fps = 10;
 WorldsSetting WS;
+int Screen = 800, fps = 10;
 double current_time, last_time;
 
 // bool per tile
 // de -1 -1 a +1 +1 sumar bool=true si 2-3 range entonces vive si no muere
-// 
-
-void clickCheck(bool no){
-  if(no){
-    mouse.x = (float)esat::MousePositionX();
-    mouse.y = (float)esat::MousePositionX();
-  }
-}
 
 void generacionBichos(){
   int filas = 0;
   int col = 0;
-  for(int i = 0; i < WS.nBichos*WS.nBichos; i++){
+  int maxNum = WS.nBichos*WS.nBichos;
+  Block = (Cuadricula*)malloc(maxNum * sizeof(Cuadricula));
+  
+  for(int i = 0; i < maxNum; i++){
     bool bicho = false;
-    if(i%WS.nBichos == 0){filas++; col=0;}
+    filas = i / WS.nBichos;
+    col = i % WS.nBichos;
+
     if(rand()%2 == 0){bicho = true;}
     Pos position = {col, filas};
     
-    Block = (Cuadricula*)realloc(Block, (i+1)*sizeof(Cuadricula));
     (Block+i)->dimension = position;
     (Block+i)->vive = bicho;
     col++;
   }
 }
 
-// SE rompe TO-DO
+void clickCheck(){
+  if(esat::MouseButtonDown(0) == 1){
+    WS.update = false;
+    mouse.x = (float)esat::MousePositionX();
+    mouse.y = (float)esat::MousePositionY();
+
+    int i = 0, j = 0;
+    bool pressed, found = false;
+    pressed = esat::MouseButtonPressed(0);
+
+    while(i < WS.nBichos && !found){
+      // if found col
+      if(i*WS.espacioBichos <= mouse.x && (i+1)*WS.espacioBichos > mouse.x){
+        while(j < WS.nBichos && !found){
+          // if found row
+          if(j*WS.espacioBichos <= mouse.y && (j+1)*WS.espacioBichos > mouse.y){
+            int position = (j-1)*WS.nBichos+i;
+            (Block+position)->vive = !(Block+position)->vive;
+            found = true;
+          }
+          j++;
+        }
+      }
+      i++;
+    }
+  }
+}
+
 void dibujarBicho(){
   float *array = nullptr;
   array = (float*)malloc(10*sizeof(float));
@@ -85,8 +106,56 @@ void dibujarBicho(){
       esat::DrawSetFillColor(255,0,0);
       esat::DrawSolidPath(array, 5);
     }
-    free(array);
-    array = nullptr; 
+  }
+}
+
+int chechSuroundings(int c, int r){
+  int temp = 0;
+  for(int i = c-1; i <= c+1; i++){
+    for(int j = r-1; j <= r+1; j++){
+      //para evitar leer -1 o pasarse de linea
+      if(i >= 0 && i < WS.nBichos && j >= 0 && j < WS.nBichos){
+        int position = j*WS.nBichos+i;
+        if(i != c || j != r){
+          if((Block+position)->vive){
+            temp++;
+          }
+        }
+      }
+    }
+  }
+  return temp;
+}
+
+void updateBichos(){
+  if(WS.update){
+    int row = 0;
+    int col = 0;
+    bool *temp = nullptr;
+    temp = (bool*)malloc(WS.nBichos * WS.nBichos * sizeof(bool));
+
+    for(int i = 0; i < WS.nBichos*WS.nBichos; i++){
+      row = i / WS.nBichos;
+      col = i % WS.nBichos;
+      int neigbors = chechSuroundings(col, row);
+      int position = (row)*WS.nBichos+col;
+
+      if((neigbors == WS.n1 || neigbors == WS.n2 || neigbors == WS.n3) && (Block+position)->vive == false){
+        *(temp+position) = true;
+      }
+      else if((neigbors == WS.v1 || neigbors == WS.v2 || neigbors == WS.v3) && (Block+position)->vive == true){
+        *(temp+position) = true;
+      }
+      else{
+        *(temp+position) = false;
+      }
+      col++;
+    }
+    
+    for(int i = 0; i < WS.nBichos*WS.nBichos; i++){
+      (Block+i)->vive = *(temp+i);
+    }
+    free(temp);
   }
 }
 
@@ -97,56 +166,96 @@ void fpsControl(){
 }
 
 int esat::main(int argc, char **argv) {
-  // if(argc == 3){
-    srand(time(NULL));
-    WS.espacioBichos = 10;
-    WS.nBichos = Screen/WS.espacioBichos;
+  if(argc < 3){
+    printf("ERROR: Faltan datos");  
+    return 1;
+  }
+  srand(time(NULL));
+  printf("a");
 
-    // *argv+0 nombre del programa
-    // nacimiento/muerte (0-0-0) y nBichos
+  WS.n1 = WS.n2 = WS.n3 = -1;
+  WS.v1 = WS.v2 = WS.v3 = -1;
+  printf("a");
 
-    // WorldsSetting *VM;
-    // WorldsSetting WS;
+  char *nace = nullptr;
+  char *vive = nullptr;
+  int nace_len = 0;
+  int vive_len = 0;
+  printf("a");
 
-    // VM = (WorldsSetting*)malloc(VM, sizeof(WorldsSetting));
-    // WS.espacioBichos = atoi(*(argv+2)); 
+  int i = 0, newIndex = 0;;
+  bool slashFound = false;
 
-    // int i = 0;
-    // bool nacimiento = true;
-    // for(int i = 0; i < strlen(*(argv+1))){
-    //   if(*(argv+1)[i] == '/'){nacimiento == false};
-    //   if(nacimiento){
-    //     WS.v1
-    //   }
-      
-    // }
-    
-    esat::WindowInit(Screen, Screen);
-    WindowSetMouseVisibility(true);
-
-    generacionBichos();
-    bool si;
-    while(esat::WindowIsOpened() && !esat::IsSpecialKeyDown(esat::kSpecialKey_Escape)){
-      last_time = esat::Time();
-      esat::DrawBegin();
-      esat::DrawClear(0,0,0);
-      //si = MouseButtonPressed(0);
-      printf("a");
-      //clickCheck(si);
-      dibujarBicho();
-      printf("b");
-
-      esat::DrawEnd();  	
-      esat::WindowFrame();
-      
-      fpsControl();
+  while(argv[1][i] != '\0'){
+    if(argv[1][i] != '/'){
+       if (!slashFound) {
+        nace = (char*)realloc(nace, nace_len + 2);
+        nace[nace_len] = argv[1][i];
+        nace_len++;
+        nace[nace_len] = '\0';
+    } else {
+        vive = (char*)realloc(vive, vive_len + 2);
+        vive[vive_len] = argv[1][i];
+        vive_len++;
+        vive[vive_len] = '\0';
     }
-    esat::WindowDestroy();
-    free(Block);
-    Block = nullptr;
-  // }
-  // else{
-  //   printf("ERROR: Faltan datos");  
-  // }
+    }
+    else{
+      slashFound = true;
+      newIndex = i+1;
+    }
+    i++;
+  }
+
+  printf("a");
+
+  int len = strlen(nace);
+  printf("-%d-",len);
+  if (len > 0) WS.n1 = nace[0] - 48;
+  if (len > 1) WS.n2 = nace[1] - 48;
+  if (len > 2) WS.n3 = nace[2] - 48;
+  printf("a");
+  
+  len = strlen(vive);
+  printf("-%d-",len);
+  if (len > 0) WS.v1 = vive[0] - 48;
+  if (len > 1) WS.v2 = vive[1] - 48;
+  if (len > 2) WS.v3 = vive[2] - 48;
+
+  
+  WS.espacioBichos = atoi(*(argv+2));
+  WS.nBichos = Screen/WS.espacioBichos;
+  
+  free(nace);
+  nace = nullptr;
+  free(vive);
+  vive = nullptr;
+    
+  esat::WindowInit(Screen, Screen);
+  WindowSetMouseVisibility(true);
+
+  generacionBichos();
+  while(esat::WindowIsOpened() && !esat::IsSpecialKeyDown(esat::kSpecialKey_Escape)){
+    last_time = esat::Time();
+    esat::DrawBegin();
+    esat::DrawClear(0,0,0);
+
+    clickCheck();
+    dibujarBicho();
+    updateBichos();
+      
+    if(esat::IsSpecialKeyDown(esat::kSpecialKey_Space)){
+      WS.update = true;
+    }
+
+    esat::DrawEnd();  	
+    esat::WindowFrame();
+    
+    fpsControl();
+  }
+  esat::WindowDestroy();
+  free(Block);
+  Block = nullptr;
+  
   return 0;
 }
