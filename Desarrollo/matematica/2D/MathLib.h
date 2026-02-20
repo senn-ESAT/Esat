@@ -306,25 +306,25 @@ namespace mm {
 
   // - MAT x MAT -
 
-  Mat2 Mat2multiplication(Mat2 m1, Mat2 m2){
-  Mat2 temp;
+  // Mat2 Mat2multiplication(Mat2 m1, Mat2 m2){
+  // Mat2 temp;
 
-    //???????????????????
+  //   //???????????????????
 
-  }
-
-
+  // }
 
 
 
-  // ---------- COMBO ----------
 
-  Vec2 Vec2MultMat2Vec2(Mat2 mat, Vec2 vec) {
-    Vec2 tmp = {
-      mat.m[0] * vec.x + mat.m[2] * vec.y,
-      mat.m[1] * vec.x + mat.m[3] * vec.y
-    };
-    return tmp;
-  };
+
+  // // ---------- COMBO ----------
+
+  // Vec2 Vec2MultMat2Vec2(Mat2 mat, Vec2 vec) {
+  //   Vec2 tmp = {
+  //     mat.m[0] * vec.x + mat.m[2] * vec.y,
+  //     mat.m[1] * vec.x + mat.m[3] * vec.y
+  //   };
+  //   return tmp;
+  // };
   
 }
