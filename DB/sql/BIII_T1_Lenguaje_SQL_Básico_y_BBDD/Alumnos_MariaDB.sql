@@ -1,0 +1,31 @@
+
+CREATE TABLE IF NOT EXISTS `alumnos` (
+  `NIP` varchar(10) NOT NULL DEFAULT '',
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Calificacion` int(11) DEFAULT NULL,
+  `Edad` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`NIP`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla test.alumnos: ~14 rows (aproximadamente)
+DELETE FROM `alumnos`;
+/*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
+INSERT INTO `alumnos` (`NIP`, `Nombre`, `Calificacion`, `Edad`) VALUES
+	('14230', 'PEDRO JUAN', 5, 26),
+	('15230', 'PEDRO MARTINEZ', 5, 30),
+	('15973', 'EVA GRACIA', 5, 32),
+	('35390', 'JUAN VARGAS', NULL, 29),
+	('35620', 'JUAN LOPEZ', 6, 25),
+	('45973', 'EVA GARCIA', 5, 36),
+	('62981', 'LUIS  FERNANDEZ', 8, 45),
+	('69981', 'LUIS MORATA', 8, 28),
+	('78922', 'CARMEN MARINA', 4, 30),
+	('78962', 'CARMEN MARI', 4, NULL),
+	('89654', 'FRANCISCO', 7, 28),
+	('89694', 'FRANCISCO GOMEZ', 7, 29),
+	('91020', 'ALFREDO', 5, 36),
+	('91220', 'ALFREDO L', 5, 28);
+/*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
