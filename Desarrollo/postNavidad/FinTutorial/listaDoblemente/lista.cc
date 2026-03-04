@@ -21,7 +21,7 @@ int main(){
 	InsertarLista(&Lista2,80);
 	printf("Lista 1          : ");MostrarLista(Lista1); printf("\n");
 	printf("Lista 2          : ");MostrarLista(Lista2); printf("\n");
-  /*  
+  
     if((l=BuscarEnLista(Lista2,45))!=nullptr){
     	printf("Localizado y apuntado: %d\n",l->info);
     }else{
@@ -48,6 +48,6 @@ int main(){
     printf("\n-----------------\n");
     printf("Lista 1          : ");MostrarLista(Lista1); printf("\n");
     printf("Lista 2          : ");MostrarLista(Lista2); printf("\n");
-*/
+
     return 0;
 }
