@@ -21,17 +21,12 @@ void InsertarLista(TLista2 **lista, int num){
   temp->prox = *lista;
   temp->pre = nullptr;
 
-  // si es el primero no tiene anterior
-  if(lista != nullptr){
-    printf(" First ");
+  // Si la lista no estaba vacía
+  if(*lista != nullptr){
     (*lista)->pre = temp;
-  }
-  else{
-    (*lista)->pre = nullptr;
   }
   
   *lista = temp;
-  printf(" Asignation]");
 }
 
 void MostrarLista(TLista2 *lista){
