@@ -9,44 +9,43 @@
 #include <esat/time.h>
 #include <esat/sprite.h>
 
+#include "player.cc"
+
 struct Pokedex{
   int id, sprite; // el nombre se saca despues en base al id con un switch
-};
-
-struct Player{
-  float x, y;
-  int dir;
-  int *catched;
 };
 
 const int ScreenX = 800, ScreenY = 600, fps = 30, nPokemons = 8; 
 double current_time, last_time;
 
 void initSprites(esat::SpriteHandle **backgroundS, esat::SpriteHandle **playerS, esat::SpriteHandle **pokemonS){
-  esat::SpriteHandle playerSheet, bgSheet, pokeSheet;
-  pokeSheet = esat::SpriteFromFile("./img/pokemon.png");
+  esat::SpriteHandle playerSheet, pokeSheet;
   playerSheet = esat::SpriteFromFile("./img/red.png");
-  //bgSheet = esat::SpriteFromFile("./img/tiles.png"); // cambiars
+  pokeSheet = esat::SpriteFromFile("./img/pokemon.png");
 
-  (*playerS) = (esat::SpriteHandle*)malloc(12*sizeof(esat::SpriteHandle));    // el player tiene 4 dire con 3 sprites de animacion
-  //(*backgroundS) = (esat::SpriteHandle*)malloc(3*sizeof(esat::SpriteHandle)); // piso, pasto, agua
-  (*pokemonS) = (esat::SpriteHandle*)malloc(nPokemons*sizeof(esat::SpriteHandle));   // 8 pokemons diferentes
+  (*playerS) = (esat::SpriteHandle*)malloc(12*sizeof(esat::SpriteHandle));          // el player tiene 4 dire con 3 sprites de animacion
+  (*pokemonS) = (esat::SpriteHandle*)malloc(nPokemons*sizeof(esat::SpriteHandle));  // 8 pokemons diferentes
+  (*backgroundS) = (esat::SpriteHandle*)malloc(2*sizeof(esat::SpriteHandle));       // pasto, agua
 
-  for(int i = 0; i < 12; i++){
-    // player
-    (*playerS)[i] = esat::SubSprite(playerSheet, 28, 31, 0, i*28);
+  int i = 0;
+  for(int x = 0; x < 3; x++){
+    for(int y = 0; y < 4; y++){
+      // player
+      (*playerS)[i] = esat::SubSprite(playerSheet, y*28, x*28,  28, 31);
+      i++;
+    }
     
     // pokemon
-    if(i < 8){
-      (*pokemonS)[i] = esat::SubSprite(pokeSheet, 121, 121, (i/3)*121, (i/3)*121);
-    }
-
-    // background
-    // if(i < 3){
+    // if(i < 8){
     //   (*pokemonS)[i] = esat::SubSprite(pokeSheet, 121, 121, (i/3)*121, (i/3)*121);
     // }
+
   }
+  (*backgroundS)[0] = esat::SpriteFromFile("./img/grass.png");
+  (*backgroundS)[1] = esat::SpriteFromFile("./img/water.png");
   // posibles mas cargas para decoraciones
+  esat::SpriteRelease(pokeSheet);
+  esat::SpriteRelease(playerSheet);
 }
 
 void initPokedex(Pokedex **pedia){
@@ -56,21 +55,31 @@ void initPokedex(Pokedex **pedia){
   }
 }
 
-void initPlayer(Player *player){
-  player->dir = 1;
-  player->x = ScreenX/2;
-  player->y = ScreenY/2;
+void loadMaps(FILE **file){
+  *file = fopen("map.dat", "rb");
 }
 
-void loadMaps(){
+void drawMap(FILE *map, esat::SpriteHandle *tiles){
+  int value, row = 0, col = 0;
+  while(fread(&value, sizeof(value), 1, map)){
+    printf("it reads");
+    if(col%28){
+      row++;
+      col = 0;
+    }
 
+    //esat::DrawSprite(tiles[value], 28*col, 28*row);
+    col++;
+  }
 }
 
 void freeSprties(){
 
 }
 
-void fpsControl(){
+void end(){
+  esat::DrawEnd();  	
+  esat::WindowFrame();
   do {
     current_time = esat::Time();
   } while((current_time - last_time) <= 1000.0 / fps);
@@ -80,27 +89,29 @@ int esat::main(int argc, char **argv) {
   esat::WindowInit(ScreenX, ScreenY);
   WindowSetMouseVisibility(true);
   srand(time(NULL));
+
   esat::SpriteHandle *backgroundS = nullptr, *playerS = nullptr, *pokemonS = nullptr; 
   Player player;
   Pokedex *pokedex;
+  FILE *map;
 
-  initSprites(&backgroundS, &playerS, &pokemonS);
-  initPokedex(&pokedex);
+  initSprites(&backgroundS, &playerS, &pokemonS);printf("[SPRITES LOADED]");
+  //initPokedex(&pokedex);
   initPlayer(&player);
-  loadMaps();
-
+  loadMaps(&map); printf("[MAP LOADED SUCCESSFULY]");
+  //drawMap(map, backgroundS);printf("[DRAWMAP]");
 
   while(esat::WindowIsOpened() && !esat::IsSpecialKeyDown(esat::kSpecialKey_Escape)) {
     last_time = esat::Time();
     esat::DrawBegin();
     esat::DrawClear(0,0,0);
+    esat::DrawSprite(backgroundS[0], 0,0);
 
+    moverPlayer(&player);
+    drawPlayer(player, playerS);
 
-    
-    esat::DrawEnd();  	
-  	esat::WindowFrame();
-
-    fpsControl();
+    playerFrame(&player);
+    end();
   }
   esat::WindowDestroy();
   freeSprties();
