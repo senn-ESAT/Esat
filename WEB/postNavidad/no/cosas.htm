@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+
+      ul{
+        height: auto;
+        background-color: orange;
+        padding: 5pt;
+        border-radius: 5pt;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end; 
+      }
+      li{
+        margin-right: 15pt;
+      }
+      li a{
+        color: white;
+        text-decoration: none;
+      }
+      a:hover{
+        background-color: white;
+        color: black;
+      }
+
+      @media only screen and (min-width: 481px) and (max-width: 769px){
+        ul{
+          justify-content: space-around;
+        }
+      }
+
+      @media only screen and (max-width: 480px){
+        ul{
+          flex-wrap: wraps;
+          display: block;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <!--
+    bg orange color white
+    lista con links en li
+    hover color black bg ¿white?
+    pc -> align end
+    tablet -> space around
+    tel -> column
+    -->
+    <ul>
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+    </ul>
+  </body>
+</html>
