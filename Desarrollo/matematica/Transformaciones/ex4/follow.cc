@@ -60,10 +60,10 @@ void homogeneizar(){
 esat::Mat3 OuterCircle(float rot, esat::Vec2 mouse){
   esat::Mat3 m = esat::Mat3Identity();
   // escalar y por lo tanto el radio
-  m = esat::Mat3Multiply(esat::Mat3Translate(0, 4.0f), m);
+  m = esat::Mat3Multiply(esat::Mat3Translate(0, -4.0f), m);
   m = esat::Mat3Multiply(esat::Mat3Scale(50.0f, 50.0f), m);
   // rotar la figura por un valor velocidad
-  m = esat::Mat3Multiply(esat::Mat3Rotate(6.28f/(float)12*rot), m);
+  m = esat::Mat3Multiply(esat::Mat3Rotate(6.28f/(float)9*rot), m);
   // translate es el punto de origen
   m = esat::Mat3Multiply(esat::Mat3Translate(mouse.x, mouse.y ), m);
   return m;
