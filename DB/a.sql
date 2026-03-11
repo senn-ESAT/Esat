@@ -88,7 +88,7 @@ SELECT DISTINCT calificacion, edad
 FROM alumnos
 WHERE edad > 30 AND calificacion > 6
 ORDER BY 1,2;
-*/
+
 
 -- Operaciones --
 SELECT 	SUM(importe * 1.1421) AS Total_Libras, 
@@ -99,3 +99,8 @@ WHERE Anyo_pedido = YEAR(NOW());
 
 SELECT AVG(unidades_pedidas) AS media_uds_ped, SUM(unidades_pedidas)/COUNT(*) AS media2
 FROM pedidos;
+
+SELECT SUM(P.Unidades_Pedidas) AS uds_pedidas, P.Codigo_Articulo AS articulo
+FROM pedidos P
+GROUP BY P.Codigo_Articulo;
+*/
