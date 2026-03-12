@@ -49,14 +49,6 @@ void homogeneizar(){
   }
 }
 
-// calcula los puntos
-// void InitCircle() {
-//   float angle = 6.28f / (float) kNPoints;
-//   for (int i = 0; i < kNPoints; ++i) {
-//     g_circle[i] = { cosf(angle * i), sinf(angle * i), 1.0f };
-//   }
-// }
-
 esat::Mat3 OuterCircle(float rot, esat::Vec2 mouse){
   esat::Mat3 m = esat::Mat3Identity();
   // escalar y por lo tanto el radio
@@ -81,20 +73,6 @@ esat::Mat3 InnerCircle(float rot, esat::Vec2 mouse){
   return m;
 }
 
-// esat::Mat3 UpdateCircle() {
-//   esat::Vec2 mousePosition;
-//   mousePosition.x = esat::MousePositionX();
-//   mousePosition.y = esat::MousePositionY();
-//   esat::Mat3 m = esat::Mat3Identity();
-//   // escalar y por lo tanto el radio
-//   m = esat::Mat3Multiply(esat::Mat3Scale(50.0f, 50.0f), m);
-//   // rotar la figura por un valor velocidad
-//   // m = esat::Mat3Multiply(esat::Mat3Rotate(esat::Time() * 0.001f), m);
-//   // translate es el punto de origen
-//   m = esat::Mat3Multiply(esat::Mat3Translate(mousePosition.x, mousePosition.y), m);
-//   return m;
-// }
-
 void DrawCircle(esat::Mat3 m) {
   esat::Vec2 tr_circle[kNPoints];
   for (int i = 0; i < kNPoints; ++i) {
@@ -116,7 +94,6 @@ int esat::main(int argc, char** argv) {
   
   esat::WindowInit(kWindowWidth, kWindowHeight);
   esat::WindowSetMouseVisibility(true);
-  //InitCircle();
 
   while (!esat::IsSpecialKeyDown(esat::kSpecialKey_Escape) && esat::WindowIsOpened()) {
     last_time = esat::Time();
@@ -127,7 +104,6 @@ int esat::main(int argc, char** argv) {
     mousePosition.x = esat::MousePositionX();
     mousePosition.y = esat::MousePositionY();
 
-    //esat::Mat3 m = UpdateCircle();
     for(int i = 0; i < 9; i++){
       esat::Mat3 m = OuterCircle(i, mousePosition);
       DrawCircle(m);
@@ -136,7 +112,6 @@ int esat::main(int argc, char** argv) {
       esat::Mat3 m = InnerCircle(i, mousePosition);
       DrawCircle(m);
     }
-
 
     esat::DrawEnd();
     esat::WindowFrame();
