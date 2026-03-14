@@ -1,0 +1,434 @@
+body {
+  background-color: #2C3531;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: #D1E8E2;
+  height: 90px;
+  width: 100%;
+}
+
+.logo-box {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.link {
+  font-family: "Orbitron", sans-serif;
+  margin-left: 50px;
+  color: #D1E8E2;
+  font-size: 25px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #FFCB9A;
+}
+
+/* Account */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 0px;
+  margin-right: 9em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  transform: translateX(-60%); 
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 45px;
+  background-color: black;
+  color: #D1E8E2;
+  box-shadow: 0px 8px 16px 0px #2C3531;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Main content */
+.elm {
+  width: 80%;
+  height: fit-content;
+  margin-left: 10%;
+}
+
+.time-name {
+  width: 80%;
+  height: 600px;
+  background-color: #0A4D4F;
+  margin-left: 10%;
+  margin-bottom: 20px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.spr-line {
+  background-color: #FFCB9A;
+  display: inline-block;
+  border-radius: 25px;
+  margin-left: 8%;
+  margin-top: 1%;
+  height: 5px;
+  width: 84%;
+}
+
+.fst-line,
+.snd-line,
+.trd-line,
+.frth-line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2%;
+  margin-top: 2%;
+  width: 100%;
+}
+
+/* Modifica le proporzioni delle linee */
+/* I due 1 servono per dire che la grandeza cambie proporzionato alla grandeza disponibile*/
+/* Il 30% è la grandeza del div e il 2% viene sottratto al 30% per lasciare dello stazio tra i div*/
+.fst-line div {
+  flex: 1 1 calc(34% - 2%);
+}
+.fst-line div:nth-child(2) {
+  flex: 1 1 calc(68% - 2%);
+}
+
+.snd-line div {
+  flex: 1 1 calc(30% - 2%);
+}
+
+.trd-line div {
+  flex: 1 1 calc(34% - 2%);
+}
+.trd-line div:nth-child(2) {
+  flex: 1 1 calc(68% - 2%);
+}
+
+.frth-line div {
+  flex: 1 1 calc(30% - 2%);
+}
+
+.nav,
+.stats,
+.snd-img,
+.tm-trck,
+.rut-link,
+.trd-img,
+.msc,
+.to-do,
+.stts-cake {
+  background-color: #0A4D4F;
+  border-radius: 25px;
+  font-family: "Orbitron", sans-serif;
+  color: #D1E8E2;
+  font-size: 20px;
+}
+
+.stats{
+  padding: 20px;
+  font-size: x-large;
+}
+
+
+.calendar {
+  width: 100%;
+  height: 500px; /* Set this to how tall you want the calendar to appear */
+  background-color: #0A4D4F;
+  border-radius: 25px;
+  font-family: "Orbitron", sans-serif;
+  color: #D1E8E2;
+  font-size: 20px;
+  overflow: hidden; /* Prevent scrollbars around the iframe */
+  padding: 0; /* Remove inner spacing that might interfere */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.calendar-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Title */
+.title {
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  color: #D1E8E2;
+  font-size: 30px;
+  font-weight: 100;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+/* Links */
+.links {
+  background-color: #000000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .logo-box {
+    margin-left: 5%;
+  }
+
+  .link {
+    margin-left: 20px;
+    font-size: 24px;
+  }
+
+  .elm {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .spr-line {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .fst-line div,
+  .snd-line div,
+  .trd-line div,
+  .frth-line div {
+    flex: 1 1 100%;
+  }
+
+  #event-section {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  #event-section h3 {
+    margin-left: 35%;
+  }
+
+  #event-section input[type="text"] {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  #event-section button {
+    width: 40%;
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-box {
+    margin-left: 2%;
+  }
+
+  .link {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+
+  .elm {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+
+  .time-name,
+  .spr-line {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+
+  .fst-line div,
+  .snd-line div,
+  .trd-line div,
+  .frth-line div {
+    flex: 1 1 100%;
+  }
+
+  #event-section {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+
+  #event-section h3 {
+    margin-left: 32%;
+  }
+
+  #event-section input[type="text"] {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+
+  #event-section button {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #D1E8E2;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Event section */
+#event-section {
+  width: 800px;
+  height: 400px;
+  padding: 10px;
+  background: #0A4D4F;
+  margin-top: 250px;
+  margin-left: 28%;
+  border-radius: 25px;
+}
+
+#event-section h3 {
+  font-family: "Orbitron", sans-serif;
+  color: #FFCB9A;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 42%;
+}
+
+#event-section input[type="text"] {
+  font-family: "Orbitron", sans-serif;
+  background-color: #2C3531;
+  color: white;
+  margin-top: 20px;
+  margin-left: 8%;
+  padding: 10px;
+  width: 80%;
+  border-radius: 25px;
+  border: none;
+}
+
+#event-section button {
+  font-family: "Orbitron", sans-serif;
+  background: #FFCB9A;
+  box-shadow: 0px 6px #9C7A5C;
+  color: black;
+  font-weight: 800;
+  font-size: larger;
+  border: none;
+  border-radius: 25px;
+  width: 20%;
+  height: 50px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 60px;
+  margin-left: 40%;
+}
+
+#event-section button:active {
+  box-shadow: none;
+  margin-top: 66px;
+}  
+
+/*progress bar*/
+.progress {
+  width: 100%;
+  background-color: #094244;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+  position: relative;
+  text-align: center;
+  height: 30px;
+}
+
+.progress-bar {
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  background-color: #4FA042;
+}
+
+.progress-text {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/*Saluto*/
+.greeting{
+  color: #4FA042;
+  font-size: 40px;
+  font-weight: 200;
+  margin-right: 5%;
+}
+/*palla del clima dopo dovrei fare in modo che il colore cambi in base al clima
+credo sarebbe figo, forse dopo*/
+.circle {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: #56BEBE;
+}
