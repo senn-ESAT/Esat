@@ -12,15 +12,27 @@ Color: EDC60F yellow
 }
 
 body {
-  background-color: #f3adad;
+  background-color: #000000;
   margin: 0;
   padding: 0;
   width: 100%;
   font-family: "Montserrat", sans-serif;
+  color: #fdfdfa;
 }
 
 h1 {
   font-family: "Cinzel", serif;
+  color: #edc60f;
+}
+
+hr {
+  border: 1px solid #edc60f;
+  width: 70%;
+}
+
+a {
+  text-decoration: none;
+  color: #fdfdfa;
 }
 
 img {
@@ -30,25 +42,89 @@ img {
   object-fit: cover;
 }
 
-/* Topbar */
+/* ///////////// Topbar ///////////// */
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background-color: black;
   color: #fdfdfa;
   height: 50px;
-  width: 100%;
-  padding: 10pt;
+  padding: 0 10pt;
 }
 
-.menuLinks {
+.logo {
+  height: 100%;
+  width: auto;
+}
+
+.menuLinks ul {
   list-style: none;
-  justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .menuLinks li {
   display: inline-block;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px; /* Adjust spacing as needed */
+  margin-right: 10px;
 }
+
+/* ///////////// Content ///////////// */
+
+.imgRadius {
+  border-radius: 10px;
+}
+
+.Section {
+  padding: 20pt 50pt 20pt 50pt;
+  display: flex;
+  align-items: center;
+  gap: 5%; /*no conocia a gap pero es muy util*/
+}
+
+.Section-60 {
+  width: 60%;
+  text-align: center;
+}
+
+.Section-35 {
+  width: 35%;
+  height: auto;
+}
+
+.gameStoryText {
+  padding: 50pt;
+}
+
+/* MAP SECTION */
+
+.splitImages {
+  padding: 20pt 50pt 20pt 50pt;
+  display: flex;
+  align-items: center;
+}
+
+.imageSection {
+  width: 50%;
+  height: 300px;
+  position: relative;
+}
+
+.BlackkWhiteFilter {
+  /*blnco y negro*/
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.imageSection a:hover {
+  filter: none;
+}
+
+.textOverImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ///////////// Footer ///////////// */
