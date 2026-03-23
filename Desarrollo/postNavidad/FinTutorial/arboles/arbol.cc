@@ -20,7 +20,7 @@ int main(){
 
 
   printf("\n------------ ARBOL GENERADO ----------------\n");
-  MostrarArbol( barbol1, 0);
+  MostrarArbol(barbol1, 0);
   printf("--------------------------------------------\n\n\n");
 
   return 0;

@@ -18,14 +18,15 @@ Tbarbol* insertar_barbol(int num, Tbarbol *TL, Tbarbol *TR){
 
 void MostrarArbol(Tbarbol *barbol, int offset){
 
-  
   if(barbol->Rchild != nullptr){
     MostrarArbol(barbol->Rchild, offset+3);
   }
+
   for(int i = 0; i < offset; i++){
     printf(" ");
   }
   printf("%03d\n", barbol->content);
+  
   if(barbol->Lchild != nullptr){
     MostrarArbol(barbol->Lchild, offset+3);
   }
