@@ -185,6 +185,18 @@ namespace mm {
     printf("[X]: %f [Y]: %f [Z]: %f [W]: %f\n", v.x, v.y, v.z, v.w);
   }
 
+  float DotProductVec2(Vec2 v1, Vec2 v2){
+    float temp;
+    temp = (v1.x * v2.x) + (v1.y * v2.y);
+    return temp;
+  }
+
+  float DotProductVec3(Vec3 v1, Vec3 v2){
+    float temp;
+    temp = (v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z);
+    return temp;
+  }
+
   /*
   --- Mat
   Suma de matrices  v
