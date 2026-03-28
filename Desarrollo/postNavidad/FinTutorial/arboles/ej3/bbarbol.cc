@@ -1,10 +1,26 @@
 struct tbbarbol{
-  int info;
+  int info, repetition = 0;
   tbbarbol *Rchild, *Lchild;
 };
 
 tbbarbol* crear_barbol(){
   return nullptr;
+}
+
+tbbarbol* buscar_barbol(tbbarbol *barbol, int num){
+  tbbarbol *temp = nullptr;
+  if(barbol->Rchild != nullptr && temp == nullptr){
+    temp = buscar_barbol(barbol->Rchild, num);
+  }
+  
+  if(barbol->Lchild != nullptr && temp == nullptr){
+    temp = buscar_barbol(barbol->Lchild, num);
+  }
+
+  if(barbol->info == num && temp == nullptr){
+    temp = barbol;
+  }
+  return temp;
 }
 
 void insertar_barbol(tbbarbol **insert, int num){
@@ -14,11 +30,19 @@ void insertar_barbol(tbbarbol **insert, int num){
   temp->info = num;
   temp->Lchild = nullptr;
   temp->Rchild = nullptr;
+  temp->repetition = 1;
 
+  
   // si primera
   if(*insert == nullptr){
     *insert = temp;
   }else{
+
+    //check repetitions
+    if((*insert)->info == temp->info){
+      (*insert)->repetition++;
+    }
+    
     if((*insert)->info > temp->info){
       if((*insert)->Lchild == nullptr){ // si vacio entonces salvar
         (*insert)->Lchild = temp;
@@ -46,7 +70,7 @@ void MostrarArbol(tbbarbol *barbol, int offset){
   for(int i = 0; i < offset; i++){
     printf(" ");
   }
-  printf("%03d\n", barbol->info);
+  printf("%03d (%02d)\n", barbol->info, barbol->repetition);
   
   if(barbol->Lchild != nullptr){
     MostrarArbol(barbol->Lchild, offset+3);
@@ -90,18 +114,3 @@ void postorden(tbbarbol *barbol){
   printf("%d ", barbol->info);
 }
 
-tbbarbol* buscar_barbol(tbbarbol *barbol, int num){
-  tbbarbol *temp = nullptr;
-  if(barbol->Rchild != nullptr && temp == nullptr){
-    temp = buscar_barbol(barbol->Rchild, num);
-  }
-  
-  if(barbol->Lchild != nullptr && temp == nullptr){
-    temp = buscar_barbol(barbol->Lchild, num);
-  }
-
-  if(barbol->info == num && temp == nullptr){
-    temp = barbol;
-  }
-  return temp;
-}
