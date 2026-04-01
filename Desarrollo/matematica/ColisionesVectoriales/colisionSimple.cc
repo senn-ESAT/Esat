@@ -83,9 +83,6 @@ bool checkColision(esat::Vec2 mouse){
     //normalize(temp[i]);
     //dor v y mouse
   }
-
-
-
   return true;
 }
 
