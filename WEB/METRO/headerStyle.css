@@ -1,0 +1,26 @@
+/* ///////////// Topbar ///////////// */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: #fdfdfa;
+  height: 100%;
+  padding: 10pt;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+}
+
+.menuLinks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuLinks li {
+  display: inline-block;
+  margin-right: 10px;
+}

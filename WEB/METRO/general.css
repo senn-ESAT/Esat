@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  color: #fdfdfa;
+}
+
+h1 {
+  font-family: "Cinzel", serif;
+  color: #edc60f;
+}
+
+hr {
+  border: 1px solid #edc60f;
+  width: 70%;
+}
+
+a {
+  text-decoration: none;
+  color: #fdfdfa;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
