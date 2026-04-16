@@ -24,7 +24,7 @@
   }
   
   .monsterButton{
-    background-image: url('./img/metro_exodus_1-23-2019-18.webp');
+    background-image: url('./img/Monsters/Lurker.webp');
   }
   
   .humanButton{
@@ -34,7 +34,6 @@
   .tabcontent {
     color: white;
     display: none;
-    padding: 100px 20px;
     height: 100%;
   }
 
@@ -43,16 +42,27 @@
   
   .MoscowLevel{
     background-image: url("./img/Moscow_exodus.webp");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     background-attachment: fixed;
   }
 
   .enemiesSectionContent{
-        width: 60%;
-        float:left;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    padding: 0pt 20pt 0pt 20pt;
+    gap: 5%; /*no conocia a gap pero es muy util*/
+  }
+
+  .halfSection {
+    width: 50%;
+    text-align: center;
   }
 
   .enemyImage{
-    width: 25%;
+    width: 100%;
     height: auto;
   }
