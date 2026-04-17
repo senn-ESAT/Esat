@@ -104,3 +104,4 @@ SELECT SUM(P.Unidades_Pedidas) AS uds_pedidas, P.Codigo_Articulo AS articulo
 FROM pedidos P
 GROUP BY P.Codigo_Articulo;
 */
+
