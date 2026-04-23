@@ -1,129 +1,124 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="./general.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./enemyStyle.css" rel="stylesheet" type="text/css" media="all" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="./general.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="./enemyStyle.css" rel="stylesheet" type="text/css" media="all" />
+<button
+  class="tablink monsterButton"
+  onclick="openPage('Monsters', this, 'red')"
+>
+  MONSTERS
+</button>
+<button class="tablink humanButton" onclick="openPage('Humans', this, 'green')">
+  <h1 class="titles">HUMANS</h1>
+</button>
 
-    <button
-      class="tablink monsterButton"
-      onclick="openPage('Monsters', this, 'red')"
-    >
-      MONSTERS
-    </button>
-    <button
-      class="tablink humanButton"
-      onclick="openPage('Humans', this, 'green')"
-    >
-      HUMANS
-    </button>
-
-    <div id="Monsters" class="tabcontent">
-      <div class="MoscowLevel">
-        <h1>MOSCOW</h1>
-        <div class="enemiesSectionContent">
-          <div class="halfSection">
-            <img src="./img/Monsters/Demon.webp" class="enemyImage" /> 
-          </div>
-          
-          <div class="halfSection">
-            <h1>DEAMON</h1>
-            <p>
-              Lorem Ipsum is
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book. It has survived not only five
-            </p>
-          </div>
-        </div>
-
-        <div class="enemiesSectionContent">
-          <div class="halfSection">
-            <img src="./img/Monsters/Lurker.webp" class="enemyImage" /> 
-          </div>
-          
-          <div class="halfSection">
-            <h1>LURKER</h1>
-            <p>
-              Lorem Ipsum is
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book. It has survived not only five
-            </p>
-          </div>
-        </div>
-
-        <div class="enemiesSectionContent">
-          <div class="halfSection">
-            <img src="./img/Monsters/Librarian.webp" class="enemyImage" /> 
-          </div>
-          
-          <div class="halfSection">
-            <h1>Librarian</h1>
-            <p>
-              Lorem Ipsum is
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book. It has survived not only five
-            </p>
-          </div>
-        </div>
-
-        <div class="enemiesSectionContent">
-          <div class="halfSection">
-            <img src="./img/Monsters/Lurker.webp" class="enemyImage" /> 
-          </div>
-          
-          <div class="halfSection">
-            <h1>LURKER</h1>
-            <p>
-              Lorem Ipsum is
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book. It has survived not only five
-            </p>
-          </div>
-        </div>
-
+<div id="Monsters" class="tabcontent">
+  <div class="MoscowLevel">
+    <h1>MOSCOW</h1>
+    <div class="enemiesSectionContent">
+      <div class="halfSection">
+        <img src="./img/Monsters/Demon.webp" class="enemyImage" />
       </div>
-      <div class="VolgaLevel">
-        <h1>VOLGA</h1>
-      </div>
-      <div class="CaspianLevel">
-        <h1>CASPIAN</h1>
-      </div>
-      <div class="TaigaLevel">
-        <h1>TAIGA</h1>
-      </div>
-      <div class="YamantauLevel">
-        <h1>YAMANTAU</h1>
-      </div>
-      <div class="DeadCityLevel">
-        <h1>DEADCITY</h1>
+
+      <div class="halfSection">
+        <h1>DEAMON</h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five
+        </p>
       </div>
     </div>
 
-    <div id="Humans" class="tabcontent">
-      <p>WEWEWEWEWEWEW</p>
+    <div class="enemiesSectionContent">
+      <div class="halfSection">
+        <img src="./img/Monsters/Lurker.webp" class="enemyImage" />
+      </div>
+
+      <div class="halfSection">
+        <h1>LURKER</h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five
+        </p>
+      </div>
     </div>
 
-    <script>
-      function openPage(pageName, elmnt, color) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].style.backgroundColor = "";
-        }
-        document.getElementById(pageName).style.display = "block";
-        elmnt.style.backgroundColor = color;
-      }
+    <div class="enemiesSectionContent">
+      <div class="halfSection">
+        <img src="./img/Monsters/Librarian.webp" class="enemyImage" />
+      </div>
 
-      // Get the element with id="defaultOpen" and click on it
-      document.getElementById().click();
-    </script>
+      <div class="halfSection">
+        <h1>Librarian</h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five
+        </p>
+      </div>
+    </div>
+
+    <div class="enemiesSectionContent">
+      <div class="halfSection">
+        <img src="./img/Monsters/Lurker.webp" class="enemyImage" />
+      </div>
+
+      <div class="halfSection">
+        <h1>LURKER</h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="VolgaLevel">
+    <h1>VOLGA</h1>
+  </div>
+  <div class="CaspianLevel">
+    <h1>CASPIAN</h1>
+  </div>
+  <div class="TaigaLevel">
+    <h1>TAIGA</h1>
+  </div>
+  <div class="YamantauLevel">
+    <h1>YAMANTAU</h1>
+  </div>
+  <div class="DeadCityLevel">
+    <h1>DEADCITY</h1>
+  </div>
+</div>
+
+<div id="Humans" class="tabcontent">
+  <p>WEWEWEWEWEWEW</p>
+</div>
+
+<script>
+  function openPage(pageName, elmnt, color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById().click();
+</script>
