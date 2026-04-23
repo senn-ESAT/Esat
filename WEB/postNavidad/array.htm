@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+
+    <form name="form" method="post" action="">
+      <input type="button" name="abrir" id="abrir" value="abrirVentana1" onclick="abrirVentana3()"/>
+    </form>
+    
+    <script>
+      function abrirVentana3(){
+        var ventana = window.open("","","width=300, height=300");
+        ventana.document.write("Hoy es: " + mostrarFecha());
+
+        ventana.document.write("<form> <input type='button' name='cerrar' id='cerrar' value='cerrar' onclick='self.close()'/> </form>");
+      }
+
+      function mostrarFecha(){
+        var fecha = new Date();
+        var meses = new Array();
+        meses[fecha.getMonth] = "AAAAAAA";
+        document.write("Hoy es " + fecha.getDate() + " de " + meses[fecha.getMonth] + " de " + fecha.getFullYear() );
+        return fecha.getDate();
+      }
+    </script>
+  </body>
+</html>

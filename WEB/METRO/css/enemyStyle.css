@@ -9,6 +9,10 @@ html {
   font-family: Arial;
 }
 
+.tablink-container{
+  margin: 10pt 5% 10pt 5%
+}
+
 /*los 2 botones imagen*/
 .tablink {
   color: white;
@@ -27,11 +31,11 @@ html {
 }
 
 .monsterButton {
-  background-image: url("./img/Monsters/Lurker.webp");
+  background-image: url("../img/Monsters/Lurker.webp");
 }
 
 .humanButton {
-  background-image: url("./img/faction_NeRDkLB.webp");
+  background-image: url("../img/faction_NeRDkLB.webp");
 }
 
 .tabcontent {
@@ -46,16 +50,23 @@ html {
   background-color: #000;
 }
 
-.MoscowLevel {
-  background-image: url("./img/Moscow_exodus.webp");
+.MoscowLevel, .VolgaLevel, .CaspianLevel, .TaigaLevel, .YamantauLevel, .DeadCityLevel{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
 }
 
+.MoscowLevel {
+  background-image: url("../img/Moscow_exodus.webp");
+}
+
+.VolgaLevel{
+  background-image: url("../img/the-volga-metro-exodus.jpg");
+}
+
 .enemiesSectionContent {
-  width: 100%;
+  width: 90%;
   display: flex;
   align-self: center;
   align-items: center;

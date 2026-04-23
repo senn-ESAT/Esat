@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+
+    <form name="form" method="post" action="">
+      <input type="button" name="abrir" id="abrir" value="abrirVentana1" onclick="abrirVentana1()"/>
+      <input type="button" name="abrir2" id="abrir2" value="abrirVentana2" onclick="abrirVentana2()"/>
+      <input type="button" name="abrir3" id="abrir3" value="abrirVentana3" onclick="abrirVentana3()"/>
+    </form>
+    
+    <script>
+      function abrirVentana1(){
+        window.open("https://www.esat.es","","");
+      }
+      function abrirVentana2(){
+        window.open("https://www.esat.es","","width=300, height=300");
+      }
+      function abrirVentana3(){
+        var ventana = window.open("","","width=300, height=300");
+        var i="pepe";
+        
+        ventana.document.write("hola " + i + "<br>");
+        ventana.document.write("COMO ESTAS");
+        ventana.document.write("<form> <input type='button' name='cerrar' id='cerrar' value='cerrar' onclick='self.close()'/> </form>");
+      }
+    </script>
+  </body>
+</html>
