@@ -26,7 +26,7 @@ FROM USUARIOS AS U;
 -- que se han apuntado.
 
 
-
+-- esta, la 5 se tiene que hacer de 2 formas
 -- 5.Indicar en que campeonatos no se ha apuntado ningún participante.
 
 -- 6.Cuales son las configuraciones de partida menos seleccionadas y cuales las que
