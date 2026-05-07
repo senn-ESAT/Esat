@@ -1,7 +1,28 @@
-.formSection{
+input, table{
+  width: 100%;
+}
 
+table{
+  height: 100%;
+}
+
+.centeredContainer{
+  margin: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer{
+  display: flex;
+  justify-content: center;
+  
+  border: 1px solid #EDC60F;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .PrivPol{
-  
+  margin: 10%;
+  align-self: center;
 }
