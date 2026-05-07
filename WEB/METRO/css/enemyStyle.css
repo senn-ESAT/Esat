@@ -9,8 +9,8 @@ html {
   font-family: Arial;
 }
 
-.tablink-container{
-  margin: 10pt 5% 10pt 5%
+.tablink-container {
+  margin: 10pt 5% 10pt 5%;
 }
 
 /*los 2 botones imagen*/
@@ -50,7 +50,12 @@ html {
   background-color: #000;
 }
 
-.MoscowLevel, .VolgaLevel, .CaspianLevel, .TaigaLevel, .YamantauLevel, .DeadCityLevel{
+.MoscowLevel,
+.VolgaLevel,
+.CaspianLevel,
+.TaigaLevel,
+.YamantauLevel,
+.DeadCityLevel {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -61,7 +66,7 @@ html {
   background-image: url("../img/Moscow_exodus.webp");
 }
 
-.VolgaLevel{
+.VolgaLevel {
   background-image: url("../img/the-volga-metro-exodus.jpg");
 }
 
@@ -81,7 +86,7 @@ html {
 
 .enemyImage {
   width: 100%;
-  height: auto;
+  max-height: 300px;
 }
 
 .titles {

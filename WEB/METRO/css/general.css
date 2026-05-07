@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Cinzel";
+  src: url("../fonts/Cinzel/Cinzel-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat.ttf");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,9 +22,14 @@ body {
 }
 
 h1 {
-  font-family: "Cinzel", serif;
+  font-family: Cinzel, serif;
   color: #edc60f;
 }
+
+/* p {
+  font-family: Montserrat, serif;
+  color: #ffffff;
+}*/
 
 hr {
   border: 1px solid #edc60f;
@@ -31,4 +46,18 @@ img {
   height: 100%;
   background-repeat: no-repeat;
   object-fit: cover;
+}
+
+.footer {
+  background-color: black;
+  align-items: center;
+}
+
+.companies {
+  display: flex;
+  align-items: center;
+}
+
+.companiesImg {
+  max-height: 50px;
 }

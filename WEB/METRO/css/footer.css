@@ -1,9 +1,13 @@
-.footer{
+.footer {
   background-color: black;
   align-items: center;
 }
 
-.companies{
+.companies {
   display: flex;
   align-items: center;
+}
+
+.companiesImg {
+  max-height: 50px;
 }

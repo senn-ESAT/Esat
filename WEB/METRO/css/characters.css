@@ -1,0 +1,14 @@
+.CaraContainer {
+  margin: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  object-fit: cover;
+}

@@ -1,29 +1,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="./css/general.css" rel="stylesheet" type="text/css" media="all" />
-<link href="./css/enemyStyle.css" rel="stylesheet" type="text/css" media="all" />
+<link
+  href="./css/enemyStyle.css"
+  rel="stylesheet"
+  type="text/css"
+  media="all"
+/>
 
 <div class="tablink-container">
   <button
     class="tablink monsterButton"
     onclick="openPage('Monsters', this, 'red')"
-    >
+  >
     MONSTERS
   </button>
-  <button class="tablink humanButton" onclick="openPage('Humans', this, 'green')">
+  <button
+    class="tablink humanButton"
+    onclick="openPage('Humans', this, 'green')"
+  >
     <h1 class="titles">HUMANS</h1>
   </button>
 </div>
 
-  
-  <div id="Monsters" class="tabcontent">
-    <div class="MoscowLevel">
-      <h1>MOSCOW</h1>
-      <div class="enemiesSectionContent">
-        <div class="halfSection">
-          <img src="./img/Monsters/Demon.webp" class="enemyImage" />
-        </div>
-        
-        <div class="halfSection">
+<div id="Monsters" class="tabcontent">
+  <div class="MoscowLevel">
+    <h1>MOSCOW</h1>
+    <div class="enemiesSectionContent">
+      <div class="halfSection">
+        <img src="./img/Monsters/Demon.webp" class="enemyImage" />
+      </div>
+
+      <div class="halfSection">
         <h1>DEAMON</h1>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -34,12 +41,12 @@
         </p>
       </div>
     </div>
-    
+
     <div class="enemiesSectionContent">
       <div class="halfSection">
         <img src="./img/Monsters/Lurker.webp" class="enemyImage" />
       </div>
-      
+
       <div class="halfSection">
         <h1>LURKER</h1>
         <p>
@@ -51,12 +58,12 @@
         </p>
       </div>
     </div>
-    
+
     <div class="enemiesSectionContent">
       <div class="halfSection">
         <img src="./img/Monsters/Librarian.webp" class="enemyImage" />
       </div>
-      
+
       <div class="halfSection">
         <h1>Librarian</h1>
         <p>
@@ -68,12 +75,12 @@
         </p>
       </div>
     </div>
-    
+
     <div class="enemiesSectionContent">
       <div class="halfSection">
         <img src="./img/Monsters/Lurker.webp" class="enemyImage" />
       </div>
-      
+
       <div class="halfSection">
         <h1>LURKER</h1>
         <p>
@@ -88,12 +95,12 @@
   </div>
   <div class="VolgaLevel">
     <h1>VOLGA</h1>
-    
+
     <div class="enemiesSectionContent">
       <div class="halfSection">
         <img src="./img/Monsters/ShrimpF.webp" class="enemyImage" />
       </div>
-      
+
       <div class="halfSection">
         <h1>SHRIMP</h1>
         <p>
@@ -105,7 +112,6 @@
         </p>
       </div>
     </div>
-    
   </div>
   <div class="CaspianLevel">
     <h1>CASPIAN</h1>
@@ -124,6 +130,16 @@
 <div id="Humans" class="tabcontent">
   <p>WEWEWEWEWEWEW</p>
 </div>
+
+<div id="footer"></div>
+
+<script>
+  fetch("./footer.htm")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
 <script>
   function openPage(pageName, elmnt, color) {

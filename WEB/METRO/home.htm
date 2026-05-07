@@ -2,13 +2,12 @@
 <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 <style>
-  @media only screen and (min-width: 770px){
-  
+  @media only screen and (min-width: 770px) {
   }
-  @media only screen and (min-width: 481px) and (max-width: 769px){
-    .Section{
+  @media only screen and (min-width: 481px) and (max-width: 769px) {
+    .Section {
       padding: 20pt 50pt 20pt 50pt;
-      display:list-item;
+      display: list-item;
       align-items: center;
       gap: 5%;
     }
@@ -16,17 +15,17 @@
       width: 100%;
       text-align: center;
     }
-    
+
     .Section-35 {
       width: 100%;
       justify-content: center;
       height: 300pt;
     }
   }
-  @media only screen and (max-width: 480px){
-    .Section{
+  @media only screen and (max-width: 480px) {
+    .Section {
       padding: 20pt 50pt 20pt 50pt;
-      display:list-item;
+      display: list-item;
       align-items: center;
       gap: 5%;
     }
@@ -34,7 +33,7 @@
       width: 100%;
       text-align: center;
     }
-    
+
     .Section-35 {
       width: 100%;
       justify-content: center;
@@ -118,3 +117,13 @@
     <div class="textOverImage"><h1>OUTSIDE</h1></div>
   </div>
 </div>
+
+<div id="footer"></div>
+
+<script>
+  fetch("./footer.htm")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>

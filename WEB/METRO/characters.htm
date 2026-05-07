@@ -1,0 +1,33 @@
+<link href="./css/general.css" rel="stylesheet" type="text/css" media="all" />
+<link
+  href="./css/characters.css"
+  rel="stylesheet"
+  type="text/css"
+  media="all"
+/>
+
+<div class="CaraContainer">
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+  <img src="./img/Artyom.png" />
+</div>
+
+<div id="footer"></div>
+
+<script>
+  fetch("./footer.htm")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
