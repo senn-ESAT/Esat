@@ -12,19 +12,19 @@
 const unsigned int ScreenX = 800;
 const unsigned int ScreenY = 600;
 
-const int nPoints = 10;
+const int nPoints = 4;
 
-esat::Vec4 points[nPoints*2];// ={
-//   //front
-//   {0, 0, 1, 1}, // bottom left
-//   {0, 1, 1, 1}, // top left
-//   {1, 1, 1, 1}, // torp right
-//   {1, 0, 1, 1}, // bottom right
-//   {0, 0, -1, 1},// bottom left
-//   {0, 1, -1, 1},// top left
-//   {1, 1, -1, 1},// torp right
-//   {1, 0, -1, 1},
-// };
+esat::Vec4 points[nPoints*2] = {
+  //front
+  {0, 0, 1, 1}, // bottom left
+  {0, 1, 1, 1}, // top left
+  {1, 1, 1, 1}, // torp right
+  {1, 0, 1, 1}, // bottom right
+  {0, 0, -1, 1},// bottom left
+  {0, 1, -1, 1},// top left
+  {1, 1, -1, 1},// torp right
+  {1, 0, -1, 1},
+};
 
 // void Modal(){
 //   esat::Mat4 m;
@@ -33,35 +33,7 @@ esat::Vec4 points[nPoints*2];// ={
 //   m = Mat4RotateZ(rotationValue);
 // }
 
-void initStar(){
-  float angle = 6.28f / (float) nPoints;
 
-  for (int i = 0; i < nPoints ; ++i){
-    if(i%2 == 0){
-      points[i] = { cosf(angle*i), sinf(angle*i), 0.4f, 1.0f};
-
-      points[i + nPoints] = {cosf(angle*i), sinf(angle*i), -0.4f, 1.0f};
-    }else{
-      points[i] = {cosf(angle*i) * 0.6f, sinf(angle*i) * 0.6f, 0.4f, 1.0f};
-
-      points[i + nPoints] = {cosf(angle*i)*0.6f, sinf(angle*i)* 0.6f, -0.4f, 1.0f};
-    }
-  }
-}
-
-// estrella mini
-esat::Mat4 DerivedTransform(esat::Mat4 mat){
- 
-  esat::Mat4 m = esat::Mat4Identity();
-  // Rotate
-  m = esat::Mat4Multiply(esat::Mat4Scale(0.5f, 0.5f, 0.5f), m);
-  m = esat::Mat4Multiply(esat::Mat4RotateZ(esat::Time() * 0.005f), m);
-  m = esat::Mat4Multiply(esat::Mat4Translate(3.0f, 0.0f, 0.0f), m);
-  m = esat::Mat4Multiply(esat::Mat4RotateZ(esat::Time() * 0.0005f), m);
-
-  m = esat::Mat4Multiply(mat, m);
-  return m;
-}
 
 void DrawShape(esat::Mat4 m){
   // Draw -> points
@@ -79,6 +51,8 @@ void DrawShape(esat::Mat4 m){
   }
 
   esat::DrawSetStrokeColor(255, 255, 255);
+
+
   for(int i = 0; i < nPoints; ++i){
     // frente con frente
     esat::DrawLine(drawingPoints[i].x, 
@@ -100,22 +74,25 @@ void DrawShape(esat::Mat4 m){
   }
 }
 
-esat::Mat4 CubeTransform(esat::Vec2 mousePosition){
+esat::Mat4 CubeTransform(float offset, int layer){
   //               Translate        Scale            Projection                          ??????????
   // final_point = T(t.x, t.y, 0) * S(s.x, s.y, 1) * proj * T(0, 0, z) * 3D(aka model) * LocalPoint
 
   esat::Mat4 m = esat::Mat4Identity();
 
-  // Rotate
-  m = esat::Mat4Multiply(esat::Mat4RotateY(esat::Time() * 0.001f), m);
   // Initial translate
-  m = esat::Mat4Multiply(esat::Mat4Translate(0.0f, 0.0f, 4.0f), m);
+  m = esat::Mat4Multiply(esat::Mat4Scale(0.5f, 0.5f, 0.5f), m);
+  m = esat::Mat4Multiply(esat::Mat4Translate(8.0f, 0.0f, 0.0f), m);
+  m = esat::Mat4Multiply(esat::Mat4RotateY(esat::Time() * 0.0005f + offset), m);
+  m = esat::Mat4Multiply(esat::Mat4Translate(0.0f, 0.0f, 15.0f), m);
+
+  // Rotate
   // Projection
   m = esat::Mat4Multiply(esat::Mat4Projection(), m);
   // Scale
-  m = esat::Mat4Multiply(esat::Mat4Scale(400.0f, 400.0f, 1.0f), m);
+  m = esat::Mat4Multiply(esat::Mat4Scale(200.0f, 200.0f, 1.0f), m);
   // Tanslate
-  m = esat::Mat4Multiply(esat::Mat4Translate(mousePosition.x, mousePosition.y, 0.0f), m);
+  m = esat::Mat4Multiply(esat::Mat4Translate(400.0f, (50.0f * layer), 0.0f), m);
 
   return m;
 }
@@ -124,25 +101,23 @@ esat::Mat4 CubeTransform(esat::Vec2 mousePosition){
 int esat::main(int argc, char** argv) {
   srand(time(nullptr));
   double current_time = 0.0, last_time = 0.0, fps = 60.0;
-  esat::Vec2 mousePosition;
+  int loop = 5;
 
   esat::WindowInit(ScreenX, ScreenY);
   esat::WindowSetMouseVisibility(true);
-  initStar();
   while (!esat::IsSpecialKeyDown(esat::kSpecialKey_Escape) && esat::WindowIsOpened()) {
     last_time = esat::Time();
     esat::DrawBegin();
     esat::DrawClear(0, 0, 0);
     esat::DrawSetStrokeColor(255,255,255);
 
-    mousePosition.x = esat::MousePositionX();
-    mousePosition.y = esat::MousePositionY();
 
-    esat::Mat4 m = CubeTransform(mousePosition);
-    DrawShape(m);
-
-    m = DerivedTransform(m);
-    DrawShape(m);
+    for(int j = 0; j < 100; ++j){
+      for(int i = 0; i < loop; ++i){
+        esat::Mat4 m = CubeTransform((6.28f / loop * i) + 0.5f * j, j);
+        DrawShape(m);
+      }
+    }
 
 
 
