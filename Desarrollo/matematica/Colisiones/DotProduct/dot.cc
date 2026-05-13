@@ -24,7 +24,7 @@ struct colisionArea{
 
 struct Asteroids{
   float size;
-  int nPoints;
+  int nPoints, nAreas;
   mm::Vec2 pos, speed;
   esat::Vec3 *points;
   colisionArea* areas;
@@ -57,43 +57,66 @@ void initShip(){
 
 esat::Vec3* asteroidsShape(){
   esat::Vec3 *vertices;
-  vertices = (esat::Vec3*)malloc(10 * sizeof(esat::Vec3));
-        *(vertices)     = {-0.20f,  -0.40f, 1.0f}; //0
-        *(vertices + 1) = { 0.00f,  -0.60f, 1.0f}; //1
-        *(vertices + 2) = { 0.20f,  -0.40f, 1.0f}; //2
-        *(vertices + 3) = { 0.40f,  -0.60f, 1.0f}; //3
-        *(vertices + 4) = { 0.60f,  -0.40f, 1.0f}; //4
-        *(vertices + 5) = { 0.40f,  -0.16f, 1.0f}; //5
-        *(vertices + 6) = { 0.52f,   0.00f, 1.0f}; //6
-        *(vertices + 7) = { 0.40f,   0.20f, 1.0f}; //7
-        *(vertices + 8) = { 0.00f,   0.20f, 1.0f}; //8
-        *(vertices + 9) = {-0.20f,   0.00f, 1.0f}; //9
+      vertices = (esat::Vec3*)malloc(12 * sizeof(esat::Vec3));
+
+      *(vertices)      =  { 0.15f,   0.47f, 1.0f};  // 0
+      *(vertices + 1)  =  { 0.00f,   0.40f, 1.0f};  // 1
+      *(vertices + 2)  =  {-0.20f,   0.47f, 1.0f};  // 2
+      *(vertices + 3)  =  {-0.41f,   0.36f, 1.0f};  // 3
+      *(vertices + 4)  =  {-0.30f,   0.11f, 1.0f};  // 4
+      *(vertices + 5)  =  {-0.45f,  -0.12f, 1.0f};  // 5
+      *(vertices + 6)  =  {-0.19f,  -0.51f, 1.0f};  // 6
+      *(vertices + 7)  =  { 0.05f,  -0.44f, 1.0f};  // 7
+      *(vertices + 8)  =  { 0.20f,  -0.51f, 1.0f};  // 8
+      *(vertices + 9)  =  { 0.46f,  -0.13f, 1.0f};  // 9
+      *(vertices + 10) =  { 0.34f,   0.08f, 1.0f};  // 10
+      *(vertices + 11) =  { 0.46f,   0.36f, 1.0f};  // 11
   return vertices;
 }
 
 colisionArea* asteroidsColision(){
   colisionArea *areas;
-  areas = (colisionArea*)malloc(2 * sizeof(colisionArea));
+  areas = (colisionArea*)malloc(5 * sizeof(colisionArea));
 
-  areas[0].nPoints = 9;
-  areas[0].area = (esat::Vec3*)malloc(9 * sizeof(esat::Vec3));
-        areas[0].area[0] = {-0.20f,  -0.40f, 1.0f}; //0 0
-        areas[0].area[1] = { 0.00f,  -0.60f, 1.0f}; //1 1
-        areas[0].area[2] = { 0.20f,  -0.40f, 1.0f}; //2 2
-        areas[0].area[3] = { 0.40f,  -0.16f, 1.0f}; //5 3
-        areas[0].area[4] = { 0.52f,   0.00f, 1.0f}; //6 4
-        areas[0].area[5] = { 0.40f,   0.20f, 1.0f}; //7 5
-        areas[0].area[6] = { 0.00f,   0.20f, 1.0f}; //8 6
-        areas[0].area[7] = {-0.20f,   0.00f, 1.0f}; //9 7
-        areas[0].area[8] = {-0.20f,  -0.40f, 1.0f}; //0 8
+  areas[0].nPoints = 4;
+  areas[0].area = (esat::Vec3*)malloc(5 * sizeof(esat::Vec3));
+      areas[0].area[0]  =  { 0.15f,   0.47f, 1.0f};  // 0
+      areas[0].area[1]  =  { 0.00f,   0.40f, 1.0f};  // 1
+      areas[0].area[2]  =  { 0.34f,   0.08f, 1.0f};  // 10
+      areas[0].area[3]  =  { 0.46f,   0.36f, 1.0f};  // 11
+      areas[0].area[4]  =  { 0.15f,   0.47f, 1.0f};  // 0
 
-  areas[1].nPoints = 5;
+  areas[1].nPoints = 4;
   areas[1].area = (esat::Vec3*)malloc(5 * sizeof(esat::Vec3));
-        areas[1].area[0] = { 0.20f,  -0.40f, 1.0f}; //2 0
-        areas[1].area[1] = { 0.40f,  -0.60f, 1.0f}; //3 1
-        areas[1].area[2] = { 0.60f,  -0.40f, 1.0f}; //4 2
-        areas[1].area[3] = { 0.40f,  -0.16f, 1.0f}; //5 3
-        areas[1].area[4] = { 0.20f,  -0.40f, 1.0f}; //2 4
+      areas[1].area[0]  =  { 0.00f,   0.40f, 1.0f};  // 1
+      areas[1].area[1]  =  {-0.20f,   0.47f, 1.0f};  // 2
+      areas[1].area[2]  =  {-0.41f,   0.36f, 1.0f};  // 3
+      areas[1].area[3]  =  {-0.30f,   0.11f, 1.0f};  // 4
+      areas[1].area[4]  =  { 0.00f,   0.40f, 1.0f};  // 1
+
+  areas[2].nPoints = 4;
+  areas[2].area = (esat::Vec3*)malloc(5 * sizeof(esat::Vec3));
+      areas[2].area[0]  =  {-0.30f,   0.11f, 1.0f};  // 4
+      areas[2].area[1]  =  {-0.45f,  -0.12f, 1.0f};  // 5
+      areas[2].area[2]  =  {-0.19f,  -0.51f, 1.0f};  // 6
+      areas[2].area[3]  =  { 0.05f,  -0.44f, 1.0f};  // 7
+      areas[2].area[4]  =  {-0.30f,   0.11f, 1.0f};  // 4
+
+  areas[3].nPoints = 4;
+  areas[3].area = (esat::Vec3*)malloc(5 * sizeof(esat::Vec3));
+      areas[3].area[0]  =  { 0.05f,  -0.44f, 1.0f};  // 7
+      areas[3].area[1]  =  { 0.20f,  -0.51f, 1.0f};  // 8
+      areas[3].area[2]  =  { 0.46f,  -0.13f, 1.0f};  // 9
+      areas[3].area[3]  =  { 0.34f,   0.08f, 1.0f};  // 10
+      areas[3].area[4]  =  { 0.05f,  -0.44f, 1.0f};  // 7
+
+  areas[4].nPoints = 4;
+  areas[4].area = (esat::Vec3*)malloc(5 * sizeof(esat::Vec3));
+      areas[4].area[0] =  { 0.00f,   0.40f, 1.0f};  // 1
+      areas[4].area[1] =  {-0.30f,   0.11f, 1.0f};  // 4
+      areas[4].area[2] =  { 0.05f,  -0.44f, 1.0f};  // 7
+      areas[4].area[3] =  { 0.34f,   0.08f, 1.0f};  // 10
+      areas[4].area[4] =  { 0.00f,   0.40f, 1.0f};  // 1
 
   return areas;
 }
@@ -197,6 +220,56 @@ void DrawAsteroid(esat::Mat3 m, esat::Vec3 *points, int nPoint) {
   esat::DrawSolidPath(&tr_circle[0].x, nPoint);
 }
 
+bool colisionDetector(esat::Vec2 point, esat::Mat3 matPoint, colisionArea *colsion, int nAreas){
+  int j = 0;
+  while(j < nAreas){
+    
+    esat::Vec2 *areaPoints = nullptr;
+    areaPoints = (esat::Vec2*)malloc(colsion[j].nPoints * sizeof(esat::Vec2));
+    for (int i = 0; i < colsion[j].nPoints; ++i) {
+      esat::Vec3 tmp = esat::Mat3TransformVec3(matPoint, aste.areas[j].area[i]);    
+      areaPoints[i] = {tmp.x, tmp.y};
+    }
+
+    if(j){
+      esat::DrawSetFillColor(rand()%255,rand()%255,rand()%255);
+    }else{
+      esat::DrawSetFillColor(rand()%255,rand()%255,rand()%255);
+    }
+    esat::DrawSolidPath(&areaPoints[0].x, aste.areas[j].nPoints);        
+    
+    int i = 0;
+    bool stillSame = true;
+    float previusCross = 0.0f;
+    printf("\n");
+    while(stillSame && i < aste.areas[j].nPoints){
+
+      mm::Vec2 A = {areaPoints[i].x,areaPoints[i].y};       // 0 -> 1 -> 2 etc...
+      mm::Vec2 B = {areaPoints[i+1].x, areaPoints[i+1].y};  // 1 -> 2 -> 3 etc...
+      mm::Vec2 p = {point.x, point.y};      // p
+
+      float newCross = PointInTriangle(p, A, B);
+
+      if(i != 0){
+        if((newCross < 0 && previusCross < 0) || (newCross > 0 && previusCross > 0)){
+          stillSame = true;
+        }else{
+          stillSame = false;
+        }
+      }
+      previusCross = newCross;
+      i++;
+    }
+    
+    if(stillSame){
+      return true;
+    }
+
+    j++;
+    free(areaPoints);
+  }
+  return false;
+}
 
 int esat::main(int argc, char** argv) {
   srand(time(nullptr));
@@ -210,7 +283,8 @@ int esat::main(int argc, char** argv) {
   
   aste.size = 100.0f; // size also functions as lives
   aste.pos = {400,200};   // random position 
-  aste.nPoints = 10;
+  aste.nPoints = 12;
+  aste.nAreas = 5;
   
   esat::WindowInit(ScreenX, ScreenY);
   esat::WindowSetMouseVisibility(true);
@@ -270,57 +344,8 @@ int esat::main(int argc, char** argv) {
 
     // ASTEROIDE
     if(ChechProximity(aste.pos, mousePosition, aste.size)){
-      bool stillSame = true;
       printf("\nCLOSE TO ASTE -> ");
-
-      int j = 0;
-      while(stillSame && j < 2){
-        
-        esat::Vec2 *areaPoints = nullptr;
-        areaPoints = (esat::Vec2*)malloc(aste.areas[j].nPoints * sizeof(esat::Vec2));
-        for (int i = 0; i < aste.areas[j].nPoints; ++i) {
-          esat::Vec3 tmp = esat::Mat3TransformVec3(m, aste.areas[j].area[i]);    
-          areaPoints[i] = {tmp.x, tmp.y};
-        }
-        if(j){
-          esat::DrawSetFillColor(255,0,0);
-        }else{
-          esat::DrawSetFillColor(0,255,0);
-        }
-        esat::DrawSolidPath(&areaPoints[0].x, aste.areas[j].nPoints);        
-        
-        int i = 0;
-        float previusCross = 0.0f;
-        printf("\n");
-        while(stillSame && i < aste.areas[j].nPoints - 1){
-
-          mm::Vec2 A = {areaPoints[i].x,areaPoints[i].y};       // 0 -> 1 -> 2 etc...
-          mm::Vec2 B = {areaPoints[i+1].x, areaPoints[i+1].y};  // 1 -> 2 -> 3 etc...
-          mm::Vec2 p = {mousePosition.x, mousePosition.y};      // p
-
-          float newCross = PointInTriangle(p, A, B);
-          //printf(" %f ->", newCross);
-
-          if(i != 0){
-            if((newCross < 0 && previusCross < 0) || (newCross > 0 && previusCross > 0)){
-              stillSame = true;
-            }else{
-              stillSame = false;
-            }
-          }
-
-          previusCross = newCross;
-          i++;
-        }
-        //TO-DO calcular separadamente para ambas colisiones. As¡ controla solo 1 a la ves y se romper porque siempre esta afuera de uno si esta adentro del otro
-        if(stillSame){
-          printf("COLISION ASTEROIDS");
-        }
-        j++;
-        free(areaPoints);
-      }
-
-      if(stillSame){
+      if(colisionDetector(mousePosition, m, aste.areas, aste.nAreas)){
         printf("COLISION ASTEROIDS");
       }
     }
