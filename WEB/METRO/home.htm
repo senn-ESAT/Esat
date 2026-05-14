@@ -1,53 +1,63 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<link href="./css/general.css" rel="stylesheet" type="text/css" media="all" />
-<link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="./css/general.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
 
-
-<script src="./jquery-4.0.0.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-
-
-<style>
-  @media only screen and (min-width: 770px) {
-  }
-  @media only screen and (min-width: 481px) and (max-width: 769px) {
-    .Section {
-      padding: 20pt 50pt 20pt 50pt;
-      display: list-item;
-      align-items: center;
-      gap: 5%;
+  <script>
+    var map1 = new Image();
+    map1.src = "./img/MapaPolitica.png";
+      
+    var map2 = new Image();
+    map2.src="./img/OutsideMap.jpeg";
+  </script>
+  
+  <style>
+    @media only screen and (min-width: 770px) {
     }
-    .Section-60 {
-      width: 100%;
-      text-align: center;
+    @media only screen and (min-width: 481px) and (max-width: 769px) {
+      .Section {
+        padding: 20pt 50pt 20pt 50pt;
+        display: list-item;
+        align-items: center;
+        gap: 5%;
+      }
+      .Section-60 {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .Section-35 {
+        width: 100%;
+        justify-content: center;
+        height: 300pt;
+      }
     }
-    
-    .Section-35 {
-      width: 100%;
-      justify-content: center;
-      height: 300pt;
+    @media only screen and (max-width: 480px) {
+      .Section {
+        padding: 20pt 50pt 20pt 50pt;
+        display: list-item;
+        align-items: center;
+        gap: 5%;
+      }
+      .Section-60 {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .Section-35 {
+        width: 100%;
+        justify-content: center;
+        height: 200pt;
+      }
     }
-  }
-  @media only screen and (max-width: 480px) {
-    .Section {
-      padding: 20pt 50pt 20pt 50pt;
-      display: list-item;
-      align-items: center;
-      gap: 5%;
-    }
-    .Section-60 {
-      width: 100%;
-      text-align: center;
-    }
-    
-    .Section-35 {
-      width: 100%;
-      justify-content: center;
-      height: 200pt;
-    }
-  }
   </style>
+</head>
+<body>
 
 <div>
   <img src="./img/cover.webp" alt="Cover" class="cover" />
@@ -109,29 +119,6 @@
   </p>
 </div>
 
-<br>
-<br>
-<br>
-
-<h2>Modal Example</h2>
-
-<!-- Trigger/Open The Modal -->
-<a href="#" id="myBtn">WEWEW</a>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('id01').style.display='none'">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
-
-<br>
-<br>
-<br>
-
 <div class="tablink-container">
   <button
   class="tablink MetroButton"
@@ -146,23 +133,14 @@ onclick="openPage('OutsideMap', this, 'black')"
     <h1 class="titles">OUTSIDE</h1>
   </button>
 </div>
-
-<!--
-  <li>
-    <a data-target="#myModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" 
-    href="#myModal">HELP</a>
-  </li>
-  -->
-  
+<!-- MAPS -->
   
   <div id="MetroMap" class="tabcontent">
     <img src="./img/MapaPolitica.png" width="100%" height="auto"  usemap="#metroMap">
     
     <map name="metroMap">
-    <a href="#" id="myBtn">WEWEW</a>
-
-      <area data-target="" alt="Polis" title="Polis" href="" id="PBtn" coords="1875,2215,163" shape="circle">
-      <area target="" alt="Reich1" title="Reich1" ref="#" id="RBtn" coords="1875,1873,146" shape="circle">
+      <area target="" alt="Polis" title="Polis" href="#" id="PBtn" coords="1875,2215,163" shape="circle">
+      <area target="" alt="Reich1" title="Reich1" href="#" id="RBtn" coords="1875,1873,146" shape="circle">
       <area target="" alt="Reich2" title="Reich2" href="#" id="RBtn" coords="2471,2967,73" shape="circle">
       <area target="" alt="RedLine1" title="RedLine1" href="#" id="RLBtn" coords="1962,2044,2209,2306,2323,2211,2669,1622,2612,1520,2444,1554" shape="poly">
       <area target="" alt="RedLine2" title="RedLine2" href="#" id="RLBtn" coords="2695,1383,2824,1117,3090,935,3231,976,3189,1170,2953,1387,2752,1474" shape="poly">
@@ -180,19 +158,18 @@ onclick="openPage('OutsideMap', this, 'black')"
   
   
   <div id="OutsideMap" class="tabcontent">
-    <img src="./img/OutsideMap.jpeg" width="100%" height="auto" style="
-  object-fit: contain;" usemap="#AuroraMap">
+    <img src="./img/OutsideMap.jpeg" width="100%" height="auto" style="object-fit: contain;" usemap="#auroraMap">
 
-<map name="AuroraMap">
-  <area target="" alt="Moscow" title="Moscow" href="#" id="MoscBtn" coords="274,512,101" shape="circle">
-  <area target="" alt="Volga" title="Volga" href="#"  id="VolgBtn" coords="496,734,123" shape="circle">
-  <area target="" alt="Yamantau" title="Yamantau"  id="YamaBtn" href="#" coords="757,644,121" shape="circle">
-  <area target="" alt="Capsian" title="Capsian"  id="CaspBtn" href="#" coords="768,937,145" shape="circle">
-  <area target="" alt="Taiga" title="Forest"  id="TaigBtn" href="#" coords="1149,561,120" shape="circle">
-  <area target="" alt="DC" title="DC" href="#" id="DeadBtn" coords="1390,378,119" shape="circle">
-  <area target="" alt="End" title="End" href="#" id="BaikalBtn"  coords="1711,149,112" shape="circle">
-</map>
-</div>
+    <map name="auroraMap">
+      <area target="" alt="Moscow" title="Moscow" href="#" id="MoscBtn" coords="270,510,130" shape="circle">
+      <area target="" alt="Volga" title="Volga" href="#"  id="VolgBtn" coords="480,700,130" shape="circle">
+      <area target="" alt="Yamantau" title="Yamantau"  id="YamaBtn" href="#" coords="750,650,130" shape="circle">
+      <area target="" alt="Capsian" title="Capsian"  id="CaspBtn" href="#" coords="735,930,130" shape="circle">
+      <area target="" alt="Taiga" title="Taiga"  id="TaigBtn" href="#" coords="1180,560,130" shape="circle">
+      <area target="" alt="DC" title="DeadCity" href="#" id="DeadBtn" coords="1375,375,130" shape="circle">
+      <area target="" alt="End" title="End" href="#" id="BaikalBtn"  coords="1750,140,130" shape="circle">
+    </map>
+  </div>
 
 <!-- The Modal -->
 <div id="PolisModal" class="modal">
@@ -373,7 +350,7 @@ onclick="openPage('OutsideMap', this, 'black')"
 </script>
 
 <!-- Modal Script -->
-<script>
+<script type="text/javascript">
 
 // Get the modal
 // the metro
@@ -412,7 +389,7 @@ var Yamantaubtn = document.getElementById("YamaBtn");
 var Caspianbtn = document.getElementById("CaspBtn");
 var TaigaBtn = document.getElementById("TaigBtn");
 var DeadCityBtn = document.getElementById("DeadBtn");
-var BaikalBtn = document.getElementById("BaikalBtn");
+var BaikaBtn = document.getElementById("BaikalBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -462,27 +439,40 @@ TaigaBtn.onclick = function() {
 DeadCityBtn.onclick = function() {
   DCmodal.style.display = "block";
 }
-BaikalBtn.onclick = function() {
+BaikaBtn.onclick = function() {
   BKmodal.style.display = "block";
 }
 
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   Pmodal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
   }
-}
+  
+ // imageMapResize();
+
+
+//   $('metroMap').imageMapResize();
+
+//   $(document).ready(function() {
+//     $('metroMap').imageMapResize();
+//   });
+
+//   $('auroraMap').imageMapResize();
+//   $(document).ready(function() {
+//     $('auroraMap').imageMapResize();
+// });
+
 </script>
 
+  <script src="./jquery-4.0.0.js"></script>
+  <script src="./ImageMapResponsive/js/imageMapResizer.min.js"></script>
+  <script type="text/javascript"> $('map').imageMapResize(); </script>
 
-<script src="./ImageMapResponsive/js/imageMapResizer.min.js">
-  $('AuroraMap').imageMapResize();
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
