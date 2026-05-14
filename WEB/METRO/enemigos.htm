@@ -131,15 +131,21 @@
   <p>WEWEWEWEWEWEW</p>
 </div>
 
-<div id="footer"></div>
+<div class="footer">
+  <p class="footerText">ACADEMIC PROJECT OF <a href="#">MATIAS SENN</a></p>
+  <p class="footerText">ALL COPIRIGHT TO:</p>
+  <diV class="companiesSection">
+    <div class="companies">
+      <h2>DEEPSILVER</h2>
+      <img src="./img/Deep-Silver.png" alt="DEEPSILVER" class="companiesImg" />
+    </div>
+    <div class="companies">
+      <h2>4A games</h2>
+      <img src="./img/4a-games.png" alt="4A-GAMES" class="companiesImg" />
+    </div>
+  </diV>
+</div>
 
-<script>
-  fetch("./footer.htm")
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById("footer").innerHTML = data;
-    });
-</script>
 
 <script>
   function openPage(pageName, elmnt, color) {

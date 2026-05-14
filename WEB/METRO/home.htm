@@ -1,9 +1,12 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <link href="./css/general.css" rel="stylesheet" type="text/css" media="all" />
 <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
-<script src="./jquery-4.0.0.js"></script>
-<script type="text/javascript" src="./ImageMapResponsive/js/imageMapResizer.min.js"></script>
 
-</script>
+
+<script src="./jquery-4.0.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
 
 <style>
   @media only screen and (min-width: 770px) {
@@ -19,7 +22,7 @@
       width: 100%;
       text-align: center;
     }
-
+    
     .Section-35 {
       width: 100%;
       justify-content: center;
@@ -37,14 +40,14 @@
       width: 100%;
       text-align: center;
     }
-
+    
     .Section-35 {
       width: 100%;
       justify-content: center;
       height: 200pt;
     }
   }
-</style>
+  </style>
 
 <div>
   <img src="./img/cover.webp" alt="Cover" class="cover" />
@@ -106,28 +109,380 @@
   </p>
 </div>
 
-<!-- MAP -->
-<div class="splitImages">
-  <div class="imageSection">
-    <a href="#" class="BlackkWhiteFilter">
-      <img src="./img/MetroMAP.webp" alt="Map" />
-    </a>
-    <div class="textOverImage"><h1>METRO</h1></div>
+<br>
+<br>
+<br>
+
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<a href="#" id="myBtn">WEWEW</a>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('id01').style.display='none'">&times;</span>
+    <p>Some text in the Modal..</p>
   </div>
-  <div class="imageSection">
-    <a href="#" class="BlackkWhiteFilter">
-      <img src="./img/OutsideMAP.webp" alt="Map 2" />
-    </a>
-    <div class="textOverImage"><h1>OUTSIDE</h1></div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="tablink-container">
+  <button
+  class="tablink MetroButton"
+  onclick="openPage('MetroMap', this, 'black')"
+  >
+  <h1 class="titles">THE METRO</h1>    
+</button>
+<button
+class="tablink OutsideButton"
+onclick="openPage('OutsideMap', this, 'black')"
+    >
+    <h1 class="titles">OUTSIDE</h1>
+  </button>
+</div>
+
+<!--
+  <li>
+    <a data-target="#myModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" 
+    href="#myModal">HELP</a>
+  </li>
+  -->
+  
+  
+  <div id="MetroMap" class="tabcontent">
+    <img src="./img/MapaPolitica.png" width="100%" height="auto"  usemap="#metroMap">
+    
+    <map name="metroMap">
+    <a href="#" id="myBtn">WEWEW</a>
+
+      <area data-target="" alt="Polis" title="Polis" href="" id="PBtn" coords="1875,2215,163" shape="circle">
+      <area target="" alt="Reich1" title="Reich1" ref="#" id="RBtn" coords="1875,1873,146" shape="circle">
+      <area target="" alt="Reich2" title="Reich2" href="#" id="RBtn" coords="2471,2967,73" shape="circle">
+      <area target="" alt="RedLine1" title="RedLine1" href="#" id="RLBtn" coords="1962,2044,2209,2306,2323,2211,2669,1622,2612,1520,2444,1554" shape="poly">
+      <area target="" alt="RedLine2" title="RedLine2" href="#" id="RLBtn" coords="2695,1383,2824,1117,3090,935,3231,976,3189,1170,2953,1387,2752,1474" shape="poly">
+      <area target="" alt="RedLine3" title="RedLine3" href="#" id="RLBtn" coords="1331,2663,1491,2827,826,3511,651,3317" shape="poly">
+      <area target="" alt="RedLine4" title="RedLine4" href="#" id="RLBtn" coords="1745,2337,1525,2561,1575,2641,1814,2416" shape="poly">
+      <area target="" alt="Europe" title="Europe" href="#" id="EBtn" coords="993,2112,167" shape="circle">
+      <area target="" alt="Venice1" title="Venice1" href="#" id="VBtn" coords="2395,2196,2023,2629,2125,2758,2334,2739,2452,2420,2733,2340,2748,2200,2551,2131" shape="poly">
+      <area target="" alt="Venice2" title="Venice2" href="#" id="VBtn" coords="1806,3009,1958,3032,1928,3199,1590,3484,1434,3385,1586,3131" shape="poly">
+      <area target="" alt="Hanza" title="Hanza" href="#" id="HBtn" coords="1559,2644,1366,2283,1331,1934,1514,1581,1852,1341,2220,1322,2482,1417,2646,1527,2828,1835,2877,2143,2756,2492,2372,2804,2068,2857,1821,2789,1594,2644,1480,2758,1761,2941,2065,3013,2235,3191,2387,2960,2737,2770,2885,2747,3143,2823,3151,2724,3022,2603,3022,2397,3102,2230,2912,1619,2676,1406,2612,1212,2209,1166,1776,1121,1650,1208,1529,1391,1320,1577,1229,1862,1179,2143,1236,2375,1449,2747" shape="poly">
+      <area target="" alt="1905" title="1905" href="#" id="C05Btn" coords="1084,1630,1009,1725,1210,1896,1240,1759" shape="poly">
+      <area target="" alt="1905" title="1905" href="#" id="C05Btn" coords="1404,1896,76" shape="circle">
+      <area target="" alt="D6" title="D6" href="#" id="D6Btn" coords="1647,1778,68" shape="circle">
+    </map>
+  </div>
+  
+  
+  <div id="OutsideMap" class="tabcontent">
+    <img src="./img/OutsideMap.jpeg" width="100%" height="auto" style="
+  object-fit: contain;" usemap="#AuroraMap">
+
+<map name="AuroraMap">
+  <area target="" alt="Moscow" title="Moscow" href="#" id="MoscBtn" coords="274,512,101" shape="circle">
+  <area target="" alt="Volga" title="Volga" href="#"  id="VolgBtn" coords="496,734,123" shape="circle">
+  <area target="" alt="Yamantau" title="Yamantau"  id="YamaBtn" href="#" coords="757,644,121" shape="circle">
+  <area target="" alt="Capsian" title="Capsian"  id="CaspBtn" href="#" coords="768,937,145" shape="circle">
+  <area target="" alt="Taiga" title="Forest"  id="TaigBtn" href="#" coords="1149,561,120" shape="circle">
+  <area target="" alt="DC" title="DC" href="#" id="DeadBtn" coords="1390,378,119" shape="circle">
+  <area target="" alt="End" title="End" href="#" id="BaikalBtn"  coords="1711,149,112" shape="circle">
+</map>
+</div>
+
+<!-- The Modal -->
+<div id="PolisModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('PolisModal').style.display='none'">&times;</span>
+    <h1>Polis</h1>
+    <p>BlaBLABLA</p>
   </div>
 </div>
 
-<div id="footer"></div>
+<!-- The Modal -->
+<div id="RedLineModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('RedLineModal').style.display='none'">&times;</span>
+    <h1>The Red Line</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="HanzaModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('HanzaModal').style.display='none'">&times;</span>
+    <h1>Hanza</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="ReichModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('ReichModal').style.display='none'">&times;</span>
+    <h1>Reich</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="VeniceModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('VeniceModal').style.display='none'">&times;</span>
+    <h1>Venice</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="EuropeModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('EuropeModal').style.display='none'">&times;</span>
+    <h1>Europe</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="c1905Modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('c1905Modal').style.display='none'">&times;</span>
+    <h1>1905</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="D6Modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('D6Modal').style.display='none'">&times;</span>
+    <h1>D6</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<div id="MoscowModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('MoscowModal').style.display='none'">&times;</span>
+    <h1>Moscow</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<div id="VolgaModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('VolgaModal').style.display='none'">&times;</span>
+    <h1>Volga</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<div id="YamantauModa" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('YamantauModa').style.display='none'">&times;</span>
+    <h1>Yamantau</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<div id="CaspianModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('CaspianModal').style.display='none'">&times;</span>
+    <h1>Caspian</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+
+<div id="TaigaModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('TaigaModal').style.display='none'">&times;</span>
+    <h1>Taiga</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<div id="DeadCityModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('DeadCityModal').style.display='none'">&times;</span>
+    <h1>DeadCity</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+
+<div id="BaikalModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('BaikalModal').style.display='none'">&times;</span>
+    <h1>Baikal</h1>
+    <p>BlaBLABLA</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="footerText">ACADEMIC PROJECT OF <a href="#">MATIAS SENN</a></p>
+  <p class="footerText">ALL COPIRIGHT TO:</p>
+  <diV class="companiesSection">
+    <div class="companies">
+      <h2>DEEPSILVER</h2>
+      <img src="./img/Deep-Silver.png" alt="DEEPSILVER" class="companiesImg" />
+    </div>
+    <div class="companies">
+      <h2>4A games</h2>
+      <img src="./img/4a-games.png" alt="4A-GAMES" class="companiesImg" />
+    </div>
+  </diV>
+</div>
 
 <script>
-  fetch("./footer.htm")
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById("footer").innerHTML = data;
-    });
+  function openPage(pageName, elmnt, color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById().click();
 </script>
+
+<!-- Modal Script -->
+<script>
+
+// Get the modal
+// the metro
+var Pmodal = document.getElementById("PolisModal");
+var RLmodal = document.getElementById("RedLineModal");
+var Hmodal = document.getElementById("HanzaModal");
+var Rmodal = document.getElementById("ReichModal");
+var Vmodal = document.getElementById("VeniceModal");
+var Emodal = document.getElementById("EuropeModal");
+var C05modal = document.getElementById("1905Modal");
+var D6modal = document.getElementById("D6Modal");
+
+//outside
+var Moscmodal = document.getElementById("MoscowModal");
+var Volgolmodal = document.getElementById("VolgaModal");
+var Yamamodal = document.getElementById("YamantauModa");
+var Caspmodal = document.getElementById("CaspianModal");
+var Taigmodal = document.getElementById("TaigaModal");
+var DCmodal = document.getElementById("DeadCityModal");
+var BKmodal = document.getElementById("BaikalModal");
+
+// Get the link Input
+// the metro
+var Polisbtn = document.getElementById("PBtn");
+var Reichbtn = document.getElementById("RBtn");
+var RedLinebtn = document.getElementById("RLBtn");
+var Europebtn = document.getElementById("EBtn");
+var VeniceBtn = document.getElementById("VBtn");
+var HanzaBtn = document.getElementById("HBtn");
+var C1905Btn = document.getElementById("C05Btn");
+var d6btn = document.getElementById("D6Btn");
+// outside
+var Moscowbtn = document.getElementById("MoscBtn");
+var Volgabtn = document.getElementById("VolgBtn");
+var Yamantaubtn = document.getElementById("YamaBtn");
+var Caspianbtn = document.getElementById("CaspBtn");
+var TaigaBtn = document.getElementById("TaigBtn");
+var DeadCityBtn = document.getElementById("DeadBtn");
+var BaikalBtn = document.getElementById("BaikalBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+Polisbtn.onclick = function() {
+  Pmodal.style.display = "block";
+}
+Reichbtn.onclick = function() {
+  ReichModal.style.display = "block";
+}
+RedLinebtn.onclick = function() {
+  RLmodal.style.display = "block";
+}
+Europebtn.onclick = function() {
+  Emodal.style.display = "block";
+}
+VeniceBtn.onclick = function() {
+  Vmodal.style.display = "block";
+}
+HanzaBtn.onclick = function() {
+  Hmodal.style.display = "block";
+}
+C1905Btn.onclick = function() {
+  c1905Modal.style.display = "block";
+}
+d6btn.onclick = function() {
+  D6modal.style.display = "block";
+}
+
+// outside
+Moscowbtn.onclick = function() {
+  Moscmodal.style.display = "block";
+}
+Volgabtn.onclick = function() {
+  Volgolmodal.style.display = "block";
+}
+Yamantaubtn.onclick = function() {
+  Yamamodal.style.display = "block";
+}
+Caspianbtn.onclick = function() {
+  Caspmodal.style.display = "block";
+}
+TaigaBtn.onclick = function() {
+  Taigmodal.style.display = "block";
+}
+DeadCityBtn.onclick = function() {
+  DCmodal.style.display = "block";
+}
+BaikalBtn.onclick = function() {
+  BKmodal.style.display = "block";
+}
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  Pmodal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+<script src="./ImageMapResponsive/js/imageMapResizer.min.js">
+  $('AuroraMap').imageMapResize();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

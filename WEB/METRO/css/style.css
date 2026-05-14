@@ -34,28 +34,6 @@ Color: EDC60F yellow
 
 /* MAP SECTION */
 
-.splitImages {
-  padding: 20pt 50pt 20pt 50pt;
-  display: flex;
-  align-items: center;
-}
-
-.imageSection {
-  width: 50%;
-  height: 300px;
-  position: relative;
-}
-
-.BlackkWhiteFilter {
-  /*blnco y negro*/
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-.imageSection a:hover {
-  filter: none;
-}
-
 .textOverImage {
   position: absolute;
   top: 50%;
@@ -63,4 +41,79 @@ Color: EDC60F yellow
   transform: translate(-50%, -50%);
 }
 
-/* ///////////// Footer ///////////// */
+.tablink-container {
+  margin: 10pt 5% 10pt 5%;
+}
+
+.tablink {
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 50%;
+  height: 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: left;
+}
+
+.MetroButton {
+  background-image: url("../img/MapaPolitica.png");
+}
+
+.OutsideButton {
+  background-image: url("../img/OutsideMap.jpeg");
+}
+
+.tabcontent {
+  display: block;
+  margin: auto;
+  color: white;
+  display: none;
+  width: 90%;
+}
+
+/*   MODAL   */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
