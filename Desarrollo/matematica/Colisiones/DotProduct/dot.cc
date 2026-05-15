@@ -58,6 +58,7 @@ void initShip(){
 esat::Vec3* asteroidsShape(){
   esat::Vec3 *vertices;
       vertices = (esat::Vec3*)malloc(12 * sizeof(esat::Vec3));
+      /*
 
       *(vertices)      =  { 0.15f,   0.47f, 1.0f};  // 0
       *(vertices + 1)  =  { 0.00f,   0.40f, 1.0f};  // 1
@@ -71,13 +72,26 @@ esat::Vec3* asteroidsShape(){
       *(vertices + 9)  =  { 0.46f,  -0.13f, 1.0f};  // 9
       *(vertices + 10) =  { 0.34f,   0.08f, 1.0f};  // 10
       *(vertices + 11) =  { 0.46f,   0.36f, 1.0f};  // 11
-  return vertices;
+      */
+     
+        *(vertices)     = {-0.20f,  -0.40f, 1.0f}; //A
+      *(vertices + 1) = { 0.00f,  -0.60f, 1.0f}; //B
+      *(vertices + 2) = { 0.20f,  -0.40f, 1.0f}; //C
+      *(vertices + 3) = { 0.40f,  -0.60f, 1.0f}; //D
+      *(vertices + 4) = { 0.60f,  -0.40f, 1.0f}; //E
+      *(vertices + 5) = { 0.40f,  -0.16f, 1.0f}; //F
+      *(vertices + 6) = { 0.52f,   0.00f, 1.0f}; //G
+      *(vertices + 7) = { 0.40f,   0.20f, 1.0f}; //H
+      *(vertices + 8) = { 0.00f,   0.20f, 1.0f}; //I
+      *(vertices + 9) = {-0.20f,   0.00f, 1.0f}; //J
+
+      return vertices;
 }
 
 colisionArea* asteroidsColision(){
   colisionArea *areas;
   areas = (colisionArea*)malloc(5 * sizeof(colisionArea));
-
+/*
   areas[0].nPoints = 4;
   areas[0].area = (esat::Vec3*)malloc(5 * sizeof(esat::Vec3));
       areas[0].area[0]  =  { 0.15f,   0.47f, 1.0f};  // 0
@@ -117,6 +131,30 @@ colisionArea* asteroidsColision(){
       areas[4].area[2] =  { 0.05f,  -0.44f, 1.0f};  // 7
       areas[4].area[3] =  { 0.34f,   0.08f, 1.0f};  // 10
       areas[4].area[4] =  { 0.00f,   0.40f, 1.0f};  // 1
+*/
+
+    areas[0].nPoints = 8;
+    areas[0].area = (esat::Vec3*)malloc(9 * sizeof(esat::Vec3));
+
+    areas[0].area[0] = {-0.20f,  -0.40f, 1.0f}; //0 0
+    areas[0].area[1] = { 0.00f,  -0.60f, 1.0f}; //1 1
+    areas[0].area[2] = { 0.20f,  -0.40f, 1.0f}; //2 2
+    areas[0].area[3] = { 0.40f,  -0.16f, 1.0f}; //5 3
+    areas[0].area[4] = { 0.52f,   0.00f, 1.0f}; //6 4
+    areas[0].area[5] = { 0.40f,   0.20f, 1.0f}; //7 5
+    areas[0].area[6] = { 0.00f,   0.20f, 1.0f}; //8 6
+    areas[0].area[7] = {-0.20f,   0.00f, 1.0f}; //9 7
+    areas[0].area[8] = {-0.20f,  -0.40f, 1.0f}; //0 8
+
+    areas[1].nPoints = 4;
+    areas[1].area = (esat::Vec3*)malloc(5 * sizeof(esat::Vec3));
+
+    areas[1].area[0] = { 0.20f,  -0.40f, 1.0f}; //2 0
+    areas[1].area[1] = { 0.40f,  -0.60f, 1.0f}; //3 1
+    areas[1].area[2] = { 0.60f,  -0.40f, 1.0f}; //4 2
+    areas[1].area[3] = { 0.40f,  -0.16f, 1.0f}; //5 3
+    areas[1].area[4] = { 0.20f,  -0.40f, 1.0f}; //2
+
 
   return areas;
 }
@@ -231,11 +269,9 @@ bool colisionDetector(esat::Vec2 point, esat::Mat3 matPoint, colisionArea *colsi
       areaPoints[i] = {tmp.x, tmp.y};
     }
 
-    if(j){
-      esat::DrawSetFillColor(rand()%255,rand()%255,rand()%255);
-    }else{
-      esat::DrawSetFillColor(rand()%255,rand()%255,rand()%255);
-    }
+
+    esat::DrawSetFillColor(rand()%255,rand()%255,rand()%255);
+
     esat::DrawSolidPath(&areaPoints[0].x, aste.areas[j].nPoints);        
     
     int i = 0;
@@ -283,8 +319,8 @@ int esat::main(int argc, char** argv) {
   
   aste.size = 100.0f; // size also functions as lives
   aste.pos = {400,200};   // random position 
-  aste.nPoints = 12;
-  aste.nAreas = 5;
+  aste.nPoints = 10;
+  aste.nAreas = 2;
   
   esat::WindowInit(ScreenX, ScreenY);
   esat::WindowSetMouseVisibility(true);
