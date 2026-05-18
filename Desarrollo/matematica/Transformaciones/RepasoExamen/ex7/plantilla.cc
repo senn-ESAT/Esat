@@ -58,8 +58,8 @@ esat::Mat3 atomMat(esat::Vec2 pos, esat::Mat3 oiginal){
 
   temp = esat::Mat3Multiply(esat::Mat3Scale(0.25f / 2, 0.75f / 2), temp);  // revertir extrude de ellipse
   temp = esat::Mat3Multiply(esat::Mat3Translate(cosf(movement), sinf(movement)), temp);
-
   temp = esat::Mat3Multiply(oiginal, temp);
+
 
   return temp;
 }
