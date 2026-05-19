@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+p {
+  text-align: left;
+}
+
 body {
   background-color: #000000;
   margin: 0;
@@ -56,11 +60,11 @@ img {
   background-color: black;
 }
 
-.footerText{
+.footerText {
   text-align: center;
 }
 
-.companiesSection{
+.companiesSection {
   display: flex;
   justify-content: space-around;
 }

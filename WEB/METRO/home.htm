@@ -1,478 +1,1009 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOME</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link href="./css/general.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+    <link href="./css/general.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <script>
+      var map1 = new Image();
+      map1.src = "./img/MapaPolitica.png";
 
-  <script>
-    var map1 = new Image();
-    map1.src = "./img/MapaPolitica.png";
-      
-    var map2 = new Image();
-    map2.src="./img/OutsideMap.jpeg";
-  </script>
-  
-  <style>
-    @media only screen and (min-width: 770px) {
-    }
-    @media only screen and (min-width: 481px) and (max-width: 769px) {
-      .Section {
-        padding: 20pt 50pt 20pt 50pt;
-        display: list-item;
-        align-items: center;
-        gap: 5%;
+      var map2 = new Image();
+      map2.src = "./img/OutsideMap.jpeg";
+    </script>
+
+    <style>
+      @media only screen and (min-width: 770px) {
       }
-      .Section-60 {
-        width: 100%;
-        text-align: center;
+      @media only screen and (min-width: 481px) and (max-width: 769px) {
+        .Section {
+          padding: 20pt 50pt 20pt 50pt;
+          display: list-item;
+          align-items: center;
+          gap: 5%;
+        }
+        .Section-60 {
+          width: 100%;
+          text-align: center;
+        }
+
+        .Section-35 {
+          width: 100%;
+          justify-content: center;
+          height: 300pt;
+        }
       }
-      
-      .Section-35 {
-        width: 100%;
-        justify-content: center;
-        height: 300pt;
+      @media only screen and (max-width: 480px) {
+        .Section {
+          padding: 20pt 50pt 20pt 50pt;
+          display: list-item;
+          align-items: center;
+          gap: 5%;
+        }
+        .Section-60 {
+          width: 100%;
+          text-align: center;
+        }
+
+        .Section-35 {
+          width: 100%;
+          justify-content: center;
+          height: 200pt;
+        }
       }
-    }
-    @media only screen and (max-width: 480px) {
-      .Section {
-        padding: 20pt 50pt 20pt 50pt;
-        display: list-item;
-        align-items: center;
-        gap: 5%;
-      }
-      .Section-60 {
-        width: 100%;
-        text-align: center;
-      }
-      
-      .Section-35 {
-        width: 100%;
-        justify-content: center;
-        height: 200pt;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div>
-  <img src="./img/cover.webp" alt="Cover" class="cover" />
-</div>
-
-<!-- LORE -->
-<div class="Section">
-  <div class="Section-60">
-    <h1>METRO SERIES</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam
-      urna, dignissim at ligula in, ornare dignissim mi. Proin gravida ultricies
-      risus, id mattis justo viverra id. Curabitur eu nulla pellentesque,
-      malesuada nulla et, blandit purus. Nam tempus lacus Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Praesent diam urna, dignissim at ligula
-      in, ornare dignissim mi. Proin gravida ultricies risus, id mattis justo
-      viverra id. Curabitur eu nulla pellentesque, malesuada nulla et, blandit
-      purus. Nam tempus lacus Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Praesent diam urna, dignissim at ligula in, ornare dignissim mi.
-      Proin gravida ultricies risus, id mattis justo viverra id. Curabitur eu
-      nulla pellentesque, malesuada nulla et, blandit purus. Nam tempus lacus
-    </p>
-  </div>
-  <div class="Section-35">
-    <img src="./img/bookCover.webp" alt="BOOK COVER" class="imgRadius" />
-  </div>
-</div>
-<hr />
-<!-- ARTYOM -->
-<div class="Section">
-  <div class="Section-35">
-    <img src="./img/Artyom.png" alt="Artyom" class="imgRadius" />
-  </div>
-  <div class="Section-60">
-    <h1>ARTYOM</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam
-      urna, dignissim at ligula in, ornare dignissim mi. Proin gravida ultricies
-      risus, id mattis justo viverra id. Curabitur eu nulla pellentesque,
-      malesuada nulla et, blandit purus. Nam tempus lacus neque, nec luctus erat
-      ultrices eu. Quisque a nibh ac mauris iaculis blandit.
-    </p>
-  </div>
-</div>
-<hr />
-<div class="gameStoryText">
-  <h1>NO NACIMOS PARA VIVIR EN LOS TÚNELES</h1>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam urna,
-    dignissim at ligula in, ornare dignissim mi. Proin gravida ultricies risus,
-    id mattis justo viverra id. Curabitur eu nulla pellentesque, malesuada nulla
-    et, blandit purus. Nam tempus lacus neque, nec luctus erat ultrices eu.
-    Quisque a nibh ac mauris iaculis blandit. Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Praesent diam urna, dignissim at ligula in,
-    ornare dignissim mi. Proin gravida ultricies risus, id mattis justo viverra
-    id. Curabitur eu nulla pellentesque, malesuada nulla et, blandit purus. Nam
-    tempus lacus neque, nec luctus erat ultrices eu. Quisque a nibh ac mauris
-    iaculis blandit.
-  </p>
-</div>
-
-<div class="tablink-container">
-  <button
-  class="tablink MetroButton"
-  onclick="openPage('MetroMap', this, 'black')"
-  >
-  <h1 class="titles">THE METRO</h1>    
-</button>
-<button
-class="tablink OutsideButton"
-onclick="openPage('OutsideMap', this, 'black')"
-    >
-    <h1 class="titles">OUTSIDE</h1>
-  </button>
-</div>
-<!-- MAPS -->
-  
-  <div id="MetroMap" class="tabcontent">
-    <img src="./img/MapaPolitica.png" width="100%" height="auto"  usemap="#metroMap">
-    
-    <map name="metroMap">
-      <area target="" alt="Polis" title="Polis" href="#" id="PBtn" coords="1875,2215,163" shape="circle">
-      <area target="" alt="Reich1" title="Reich1" href="#" id="RBtn" coords="1875,1873,146" shape="circle">
-      <area target="" alt="Reich2" title="Reich2" href="#" id="RBtn" coords="2471,2967,73" shape="circle">
-      <area target="" alt="RedLine1" title="RedLine1" href="#" id="RLBtn" coords="1962,2044,2209,2306,2323,2211,2669,1622,2612,1520,2444,1554" shape="poly">
-      <area target="" alt="RedLine2" title="RedLine2" href="#" id="RLBtn" coords="2695,1383,2824,1117,3090,935,3231,976,3189,1170,2953,1387,2752,1474" shape="poly">
-      <area target="" alt="RedLine3" title="RedLine3" href="#" id="RLBtn" coords="1331,2663,1491,2827,826,3511,651,3317" shape="poly">
-      <area target="" alt="RedLine4" title="RedLine4" href="#" id="RLBtn" coords="1745,2337,1525,2561,1575,2641,1814,2416" shape="poly">
-      <area target="" alt="Europe" title="Europe" href="#" id="EBtn" coords="993,2112,167" shape="circle">
-      <area target="" alt="Venice1" title="Venice1" href="#" id="VBtn" coords="2395,2196,2023,2629,2125,2758,2334,2739,2452,2420,2733,2340,2748,2200,2551,2131" shape="poly">
-      <area target="" alt="Venice2" title="Venice2" href="#" id="VBtn" coords="1806,3009,1958,3032,1928,3199,1590,3484,1434,3385,1586,3131" shape="poly">
-      <area target="" alt="Hanza" title="Hanza" href="#" id="HBtn" coords="1559,2644,1366,2283,1331,1934,1514,1581,1852,1341,2220,1322,2482,1417,2646,1527,2828,1835,2877,2143,2756,2492,2372,2804,2068,2857,1821,2789,1594,2644,1480,2758,1761,2941,2065,3013,2235,3191,2387,2960,2737,2770,2885,2747,3143,2823,3151,2724,3022,2603,3022,2397,3102,2230,2912,1619,2676,1406,2612,1212,2209,1166,1776,1121,1650,1208,1529,1391,1320,1577,1229,1862,1179,2143,1236,2375,1449,2747" shape="poly">
-      <area target="" alt="1905" title="1905" href="#" id="C05Btn" coords="1084,1630,1009,1725,1210,1896,1240,1759" shape="poly">
-      <area target="" alt="1905" title="1905" href="#" id="C05Btn" coords="1404,1896,76" shape="circle">
-      <area target="" alt="D6" title="D6" href="#" id="D6Btn" coords="1647,1778,68" shape="circle">
-    </map>
-  </div>
-  
-  
-  <div id="OutsideMap" class="tabcontent">
-    <img src="./img/OutsideMap.jpeg" width="100%" height="auto" style="object-fit: contain;" usemap="#auroraMap">
-
-    <map name="auroraMap">
-      <area target="" alt="Moscow" title="Moscow" href="#" id="MoscBtn" coords="270,510,130" shape="circle">
-      <area target="" alt="Volga" title="Volga" href="#"  id="VolgBtn" coords="480,700,130" shape="circle">
-      <area target="" alt="Yamantau" title="Yamantau"  id="YamaBtn" href="#" coords="750,650,130" shape="circle">
-      <area target="" alt="Capsian" title="Capsian"  id="CaspBtn" href="#" coords="735,930,130" shape="circle">
-      <area target="" alt="Taiga" title="Taiga"  id="TaigBtn" href="#" coords="1180,560,130" shape="circle">
-      <area target="" alt="DC" title="DeadCity" href="#" id="DeadBtn" coords="1375,375,130" shape="circle">
-      <area target="" alt="End" title="End" href="#" id="BaikalBtn"  coords="1750,140,130" shape="circle">
-    </map>
-  </div>
-
-<!-- The Modal -->
-<div id="PolisModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('PolisModal').style.display='none'">&times;</span>
-    <h1>Polis</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="RedLineModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('RedLineModal').style.display='none'">&times;</span>
-    <h1>The Red Line</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="HanzaModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('HanzaModal').style.display='none'">&times;</span>
-    <h1>Hanza</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="ReichModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('ReichModal').style.display='none'">&times;</span>
-    <h1>Reich</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="VeniceModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('VeniceModal').style.display='none'">&times;</span>
-    <h1>Venice</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="EuropeModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('EuropeModal').style.display='none'">&times;</span>
-    <h1>Europe</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="c1905Modal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('c1905Modal').style.display='none'">&times;</span>
-    <h1>1905</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="D6Modal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('D6Modal').style.display='none'">&times;</span>
-    <h1>D6</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<div id="MoscowModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('MoscowModal').style.display='none'">&times;</span>
-    <h1>Moscow</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<div id="VolgaModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('VolgaModal').style.display='none'">&times;</span>
-    <h1>Volga</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<div id="YamantauModa" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('YamantauModa').style.display='none'">&times;</span>
-    <h1>Yamantau</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<div id="CaspianModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('CaspianModal').style.display='none'">&times;</span>
-    <h1>Caspian</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-
-<div id="TaigaModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('TaigaModal').style.display='none'">&times;</span>
-    <h1>Taiga</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<div id="DeadCityModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('DeadCityModal').style.display='none'">&times;</span>
-    <h1>DeadCity</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-
-<div id="BaikalModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('BaikalModal').style.display='none'">&times;</span>
-    <h1>Baikal</h1>
-    <p>BlaBLABLA</p>
-  </div>
-</div>
-
-<div class="footer">
-  <p class="footerText">ACADEMIC PROJECT OF <a href="#">MATIAS SENN</a></p>
-  <p class="footerText">ALL COPIRIGHT TO:</p>
-  <diV class="companiesSection">
-    <div class="companies">
-      <h2>DEEPSILVER</h2>
-      <img src="./img/Deep-Silver.png" alt="DEEPSILVER" class="companiesImg" />
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="./img/cover.webp" alt="Cover" class="cover" />
     </div>
-    <div class="companies">
-      <h2>4A games</h2>
-      <img src="./img/4a-games.png" alt="4A-GAMES" class="companiesImg" />
+
+    <!-- LORE -->
+    <div class="Section">
+      <div class="Section-60">
+        <h1>METRO SERIES</h1>
+        <p>
+          La saga Metro es una franquicia de ficción postapocalíptica basada originalmente en las
+          novelas del escritor ruso Dmitry Glukhovsky. En 2013, una guerra nuclear devastó gran
+          parte del planeta y convirtió la superficie en un territorio inhabitable. Moscú fue una de
+          las ciudades más afectadas, obligando a miles de personas a refugiarse en la red
+          subterránea del metro, donde las estaciones fueron transformadas en pequeñas comunidades
+          capaces de sobrevivir aisladas del exterior. Con el paso de los años, la radiación, las
+          criaturas mutadas y la total falta de comunicación hicieron creer a los habitantes del
+          metro que eran los últimos supervivientes que quedaban en el mundo. El primer juego, Metro
+          2033, adapta los eventos principales de la novela original y establece el tono de la saga.
+          Centrándose principalmente en temas como la sobrevivencia y sufrimiento de los habitantes
+          del metro. La historia continúa con Metro: Last Light, secuela directa, centrándose más en
+          las tensiones políticas y militares dentro del metro de Moscú. Metro Exodus es la última
+          entrega de la saga. El juego nos presenta por primera vez el mundo exterior.
+        </p>
+      </div>
+      <div class="Section-35">
+        <img src="./img/bookCover.webp" alt="BOOK COVER" class="imgRadius" />
+      </div>
     </div>
-  </diV>
-</div>
+    <hr />
+    <!-- ARTYOM -->
+    <div class="Section">
+      <div class="Section-35">
+        <img src="./img/Artyom.png" alt="Artyom" class="imgRadius" />
+      </div>
+      <div class="Section-60">
+        <h1>ARTYOM</h1>
+        <p>
+          Nacido en Moscú unos años antes de la guerra nuclear, Artyom ha pasado toda su vida en el
+          Metro y en numerosas ocasiones ha arriesgado la vida para protegerlo. Está obsesionado con
+          la idea de encontrar vida más allá de los túneles del Metro, por lo que sale regularmente
+          al exterior con un transceptor de radio para intentar establecer comunicación con el mundo
+          exterior. Está decidido a demostrar que, efectivamente, hay vida fuera del Metro.
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="gameStoryText">
+      <h1>NO NACIMOS PARA VIVIR EN LOS TÚNELES</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam urna, dignissim at
+        ligula in, ornare dignissim mi. Proin gravida ultricies risus, id mattis justo viverra id.
+        Curabitur eu nulla pellentesque, malesuada nulla et, blandit purus. Nam tempus lacus neque,
+        nec luctus erat ultrices eu. Quisque a nibh ac mauris iaculis blandit. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Praesent diam urna, dignissim at ligula in, ornare
+        dignissim mi. Proin gravida ultricies risus, id mattis justo viverra id. Curabitur eu nulla
+        pellentesque, malesuada nulla et, blandit purus. Nam tempus lacus neque, nec luctus erat
+        ultrices eu. Quisque a nibh ac mauris iaculis blandit.
+      </p>
+    </div>
 
-<script>
-  function openPage(pageName, elmnt, color) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].style.backgroundColor = "";
-    }
-    document.getElementById(pageName).style.display = "block";
-    elmnt.style.backgroundColor = color;
-  }
-  
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById().click();
-</script>
+    <div class="tablink-container">
+      <button class="tablink MetroButton" onclick="openPage('MetroMap', this, 'black')">
+        <h1 class="titles">THE METRO</h1>
+      </button>
+      <button class="tablink OutsideButton" onclick="openPage('OutsideMap', this, 'black')">
+        <h1 class="titles">OUTSIDE</h1>
+      </button>
+    </div>
+    <!-- MAPS -->
 
-<!-- Modal Script -->
-<script type="text/javascript">
+    <div id="MetroMap" class="tabcontent">
+      <img src="./img/MapaPolitica.png" width="100%" height="auto" usemap="#metroMap" />
 
-// Get the modal
-// the metro
-var Pmodal = document.getElementById("PolisModal");
-var RLmodal = document.getElementById("RedLineModal");
-var Hmodal = document.getElementById("HanzaModal");
-var Rmodal = document.getElementById("ReichModal");
-var Vmodal = document.getElementById("VeniceModal");
-var Emodal = document.getElementById("EuropeModal");
-var C05modal = document.getElementById("1905Modal");
-var D6modal = document.getElementById("D6Modal");
+      <map name="metroMap">
+        <area
+          target=""
+          alt="Polis"
+          title="Polis"
+          href="#"
+          id="PBtn"
+          coords="1875,2215,163"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="Reich1"
+          title="Reich1"
+          href="#"
+          id="RBtn"
+          coords="1875,1873,146"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="Reich2"
+          title="Reich2"
+          href="#"
+          id="RBtn"
+          coords="2471,2967,73"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="RedLine1"
+          title="RedLine1"
+          href="#"
+          id="RLBtn"
+          coords="1962,2044,2209,2306,2323,2211,2669,1622,2612,1520,2444,1554"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="RedLine2"
+          title="RedLine2"
+          href="#"
+          id="RLBtn"
+          coords="2695,1383,2824,1117,3090,935,3231,976,3189,1170,2953,1387,2752,1474"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="RedLine3"
+          title="RedLine3"
+          href="#"
+          id="RLBtn"
+          coords="1331,2663,1491,2827,826,3511,651,3317"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="RedLine4"
+          title="RedLine4"
+          href="#"
+          id="RLBtn"
+          coords="1745,2337,1525,2561,1575,2641,1814,2416"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="Europe"
+          title="Europe"
+          href="#"
+          id="EBtn"
+          coords="993,2112,167"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="Venice1"
+          title="Venice1"
+          href="#"
+          id="VBtn"
+          coords="2395,2196,2023,2629,2125,2758,2334,2739,2452,2420,2733,2340,2748,2200,2551,2131"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="Venice2"
+          title="Venice2"
+          href="#"
+          id="VBtn"
+          coords="1806,3009,1958,3032,1928,3199,1590,3484,1434,3385,1586,3131"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="Hanza"
+          title="Hanza"
+          href="#"
+          id="HBtn"
+          coords="1559,2644,1366,2283,1331,1934,1514,1581,1852,1341,2220,1322,2482,1417,2646,1527,2828,1835,2877,2143,2756,2492,2372,2804,2068,2857,1821,2789,1594,2644,1480,2758,1761,2941,2065,3013,2235,3191,2387,2960,2737,2770,2885,2747,3143,2823,3151,2724,3022,2603,3022,2397,3102,2230,2912,1619,2676,1406,2612,1212,2209,1166,1776,1121,1650,1208,1529,1391,1320,1577,1229,1862,1179,2143,1236,2375,1449,2747"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="1905"
+          title="1905"
+          href="#"
+          id="C05Btn"
+          coords="1084,1630,1009,1725,1210,1896,1240,1759"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="1905"
+          title="1905"
+          href="#"
+          id="C05Btn"
+          coords="1404,1896,76"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="D6"
+          title="D6"
+          href="#"
+          id="D6Btn"
+          coords="1647,1778,68"
+          shape="circle"
+        />
+      </map>
+    </div>
 
-//outside
-var Moscmodal = document.getElementById("MoscowModal");
-var Volgolmodal = document.getElementById("VolgaModal");
-var Yamamodal = document.getElementById("YamantauModa");
-var Caspmodal = document.getElementById("CaspianModal");
-var Taigmodal = document.getElementById("TaigaModal");
-var DCmodal = document.getElementById("DeadCityModal");
-var BKmodal = document.getElementById("BaikalModal");
+    <div id="OutsideMap" class="tabcontent">
+      <img
+        src="./img/OutsideMap.jpeg"
+        width="100%"
+        height="auto"
+        style="object-fit: contain"
+        usemap="#auroraMap"
+      />
 
-// Get the link Input
-// the metro
-var Polisbtn = document.getElementById("PBtn");
-var Reichbtn = document.getElementById("RBtn");
-var RedLinebtn = document.getElementById("RLBtn");
-var Europebtn = document.getElementById("EBtn");
-var VeniceBtn = document.getElementById("VBtn");
-var HanzaBtn = document.getElementById("HBtn");
-var C1905Btn = document.getElementById("C05Btn");
-var d6btn = document.getElementById("D6Btn");
-// outside
-var Moscowbtn = document.getElementById("MoscBtn");
-var Volgabtn = document.getElementById("VolgBtn");
-var Yamantaubtn = document.getElementById("YamaBtn");
-var Caspianbtn = document.getElementById("CaspBtn");
-var TaigaBtn = document.getElementById("TaigBtn");
-var DeadCityBtn = document.getElementById("DeadBtn");
-var BaikaBtn = document.getElementById("BaikalBtn");
+      <map name="auroraMap">
+        <area
+          target=""
+          alt="Moscow"
+          title="Moscow"
+          href="#"
+          id="MoscBtn"
+          coords="270,510,130"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="Volga"
+          title="Volga"
+          href="#"
+          id="VolgBtn"
+          coords="480,700,130"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="Yamantau"
+          title="Yamantau"
+          id="YamaBtn"
+          href="#"
+          coords="750,650,130"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="Capsian"
+          title="Capsian"
+          id="CaspBtn"
+          href="#"
+          coords="735,930,130"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="Taiga"
+          title="Taiga"
+          id="TaigBtn"
+          href="#"
+          coords="1180,560,130"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="DC"
+          title="DeadCity"
+          href="#"
+          id="DeadBtn"
+          coords="1375,375,130"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="End"
+          title="End"
+          href="#"
+          id="BaikalBtn"
+          coords="1750,140,130"
+          shape="circle"
+        />
+      </map>
+    </div>
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    <!-- The Modal -->
+    <div id="PolisModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('PolisModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>POLIS</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/PolisLogo.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                Polis está formada por 4 estaciones. En la superficie se encuentra la Biblioteca
+                Estatal de Moscú. En todo el metro, Polis es conocida como una estación que
+                simboliza la riqueza y el poder. Existe un sistema de castas compuesto por los los
+                sirvientes, los comerciantes, la fuerza de defensa y los científicos, profesores y
+                otros importantes guardianes del conocimiento de antes de la guerra. Polis es
+                liderada por el Consejo de Polis. Polis cuenta con un cuerpo militar reducido pero
+                profesional, formado por antiguos oficiales del FSB y mandos militares, cuyos
+                edificios se encontraban justo encima de las estaciones de Polis cuando estalló la
+                guerra. Lo que otorga a Polis uno de los ejercitos mejor preparados de todo el
+                metro. La estación también se considera el lugar de nacimiento de los Rangers del
+                Orden.
+              </p>
+              <hr />
+              <img
+                src="./img/SpartaLogo.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                Los Rangers de la Orden "SPARTA" son una orden militar especial de la Rusia
+                postapocalíptica que opera tanto en las ruinas del metro de Moscú como en el lago
+                Baikal. Se trata de un grupo, formado por los guerreros más hábiles y letales de
+                todo el metro. Los Rangers se mueven individualmente o en pequeñas unidades ayudando
+                a los asentamientos, además de luchar contra bandidos y mutantes por igual, al
+                tiempo que actúan como protectores de Polis. La Orden Espartana se ha dividido en
+                dos: los que siguieron a Miller y Artyom fuera de Moscú hasta el lago Baikal y los
+                que se quedaron en el Metro.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-// When the user clicks the button, open the modal 
-Polisbtn.onclick = function() {
-  Pmodal.style.display = "block";
-}
-Reichbtn.onclick = function() {
-  ReichModal.style.display = "block";
-}
-RedLinebtn.onclick = function() {
-  RLmodal.style.display = "block";
-}
-Europebtn.onclick = function() {
-  Emodal.style.display = "block";
-}
-VeniceBtn.onclick = function() {
-  Vmodal.style.display = "block";
-}
-HanzaBtn.onclick = function() {
-  Hmodal.style.display = "block";
-}
-C1905Btn.onclick = function() {
-  c1905Modal.style.display = "block";
-}
-d6btn.onclick = function() {
-  D6modal.style.display = "block";
-}
+    <!-- The Modal -->
+    <div id="RedLineModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('RedLineModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>LINEA ROJA</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/RedLineLogo.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                Con la población más grande en el Metro (estimada en 15,000), una capacidad
+                incomparable para el reclutamiento masivo y una cantidad de estaciones y vías de
+                metro superadas solo por Hansa, la Línea Roja es una de las facciones más
+                formidables del mundo postapocalíptico. la Línea Roja persigue una política de
+                expansión violenta siempre que sea posible, como lo demuestra su estado permanente
+                de conflicto con el Cuarto Reich fascista, los crímenes cometidos contra estaciones
+                no alineadas y el conflicto con los Rangers sobre la instalación militar D-6. La
+                Línea Roja es un estado de partido único gobernado por el Partido Comunista de la
+                clandestinidad de Moscú y su secretario general, Maxim Moskvin. En ideología
+                marxista-leninista y neo-estalinista, la represión política y el adoctrinamiento es
+                parte de la vida cotidiana de los ciudadanos de la línea roja, es considerada una
+                herramienta vital si el Partido quiere mantener su ascendencia y evitar la
+                infiltración fascista.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-// outside
-Moscowbtn.onclick = function() {
-  Moscmodal.style.display = "block";
-}
-Volgabtn.onclick = function() {
-  Volgolmodal.style.display = "block";
-}
-Yamantaubtn.onclick = function() {
-  Yamamodal.style.display = "block";
-}
-Caspianbtn.onclick = function() {
-  Caspmodal.style.display = "block";
-}
-TaigaBtn.onclick = function() {
-  Taigmodal.style.display = "block";
-}
-DeadCityBtn.onclick = function() {
-  DCmodal.style.display = "block";
-}
-BaikaBtn.onclick = function() {
-  BKmodal.style.display = "block";
-}
+    <!-- The Modal -->
+    <div id="HanzaModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('HanzaModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>HANZA</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/HanzaLogo.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                Al formarse y adquirir un punto de apoyo decente en el metro, Hansa se convirtió
+                rápidamente en la potencia económica del metro, una utopía hipercapitalista para los
+                ricos. Es uno de los pocos lugares en el metro donde el transporte público, el agua
+                corriente y la iluminación eléctrica a gran escala están muy extendidos. Por lo
+                general, hacen "asociaciones" con estaciones fuera del Anillo (como la Confederación
+                De Arbat y el Puesto Comercial de Belorusskaya), lo que hace que esas estaciones se
+                conviertan en estaciones de recursos dependientes de Hansa. Si bien no depende de
+                Hansa para obtener recursos, tanto el Cuarto Reich como la Línea Roja mantienen
+                relaciones comerciales con Hansa. <br />Hansa y Polis parecen las facciones más
+                democráticas dentro del metro.<br />Hansa está bien militarizada para proteger su
+                riqueza; todas sus estaciones están fuertemente vigiladas, cuenta con transporte
+                motorizado y lanzallamas, y su milicia está equipada con armas de grado militar de
+                alta gama. Las estaciones hanseáticas también parecen austeras cuando se trata de
+                entrar y salir de las estaciones, y el personal que no es de Hansa requiere
+                pasaportes u otras formas de identificación, además de que les confiscan sus armas
+                hasta que abandonan la estación. La estación también ha logrado rescatar una
+                cantidad increíble de tecnología anterior a la guerra.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- The Modal -->
+    <div id="ReichModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('ReichModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>CUARTO REICH</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/ReichLogo.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                El cuarto reich es una facción neonazi en el metro centrada en las estaciones de
+                Tverskaya, Chekhovskaya y Pushkinskaya. Pero, además mantienen varios puestos de
+                avanzada y presencia militar en varias estaciones periféricas. Están encabezados por
+                el Führer, y obedecen cada una de sus órdenes.<br />
+                En el reich se busca la pureza genética libre de cualquier mutación devida a la
+                radiación. Cualquier persona que tenga hasta la más mínima imperfección es
+                considerada una raza inferiore. El Reich siempre está mejorando sus estándares.
+                Quieren que la humanidad se deshaga de los genes anormales causados por la
+                radiación. Si a una persona se le detectan malformaciones viene ejecutado.
+                Recientemente, se han impuesto estándares más estrictos como la altura e incluso el
+                tamaño de la cabeza.<br />
+                Los soldados del Cuarto Reich son menos numerosos en comparación con los soldados de
+                la Línea Roja, pero el soldado promedio es superior debido a que está bien entrenado
+                y equipado. Parecen tener una estructura de mando más eficiente y una comprensión de
+                las tácticas militares más eficiente que la mayoría de las otras facciones de Metro,
+                probablemente debido a la naturaleza militarista del nazismo,
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-span.onclick = function() {
-  Pmodal.style.display = "none";
-}
+    <!-- The Modal -->
+    <div id="VeniceModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('VeniceModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>BANDIDOS</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/BanditLogo.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                En el metro hay muchos grupos de delincuentes, y cada banda suele ser diferente en
+                cuanto a estructura jerárquica, armamento, recursos y tamaño, desde bandas de
+                gamberros hasta grupos de delincuentes organizados.<br />Los grupos organizados más
+                peligrosos son las bandas de la estación Dry, debido a su armamento avanzado,
+                comparable al de un ejército metropolitano medio. Y en la estación Venice, que es la
+                estación más próspera dirigida por mafiosos de todo el metro.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-  
- // imageMapResize();
+    <!-- The Modal -->
+    <div id="EuropeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('EuropeModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>COMMONWEALTH OF EUROPE</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/Europe.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                El Commonwealth of Europe, más conocida simplemente como "Europa", es una facción
+                que controla tres estaciones del metro de Moscú.<br />
+                Una parte significativa de los residentes de "Europa" son inmigrantes, ex
+                empresarios y empleados del centro de negocios de la ciudad. La comunidad está
+                aislada del "Gran Metro", porque los túneles que conducen a Kievskaya y Park Pobedy
+                se han derrumbado.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- The Modal -->
+    <div id="c1905Modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('c1905Modal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>1905 CONFEDERATION</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/1905Logo.webp"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 100px"
+              />
+              <p>
+                En Metro 2033, la Confederación de 1905 es una confederación ideológica de
+                izquierdas que controla por completo las estaciones de Barrikadnaya, Ulitsa 1905
+                Goda (que da nombre a la Confederación) y Begovaya. Originalmente, la Confederación
+                también incluía Polezhayevskaya y Oktyabr'skoe Pole, pero ambas estaciones quedaron
+                abandonadas tras un accidente en Oktyabr'skoe Pole, además de que Polezhayevskaya
+                fue misteriosamente atacada y sus habitantes masacrados. La Confederación decidió
+                entonces demoler el túnel entre Polezhayevskaya y Begovaya para proteger las
+                estaciones restantes. Aparte de esto, se sabe muy poco sobre la facción, aunque su
+                proximidad a Hanza sugeriría que ambas son aliadas o, al menos, no se muestran
+                hostiles entre sí.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-//   $('metroMap').imageMapResize();
+    <!-- The Modal -->
+    <div id="D6Modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('D6Modal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>D6</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/D6Location.webp"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                D6 es una enorme instalación similar a un búnker cuyas vías de acceso están bien
+                ocultas en el metro, y cuya existencia se considera casi una leyenda entre los
+                habitantes del subsuelo. La información encontrada en la Biblioteca Lenin permite a
+                Artyom, Miller y un grupo de Rangers, cada uno con su propia especialidad, llegar a
+                una de esas entradas.Las únicas vías conocidas para acceder a la propia instalación
+                son monorraíles automatizados que conducen directamente a D6 a través de túneles
+                separados del metro. Dicha red se conoce como Metro-2 y, a diferencia del metro
+                principal, está construida sobre un sistema de monorraíl en lugar del diseño
+                estándar de dos vías. La red Metro-2, al estar construida a mayor profundidad, se
+                encuentra mucho más intacta y es más transitable. Se desconoce hasta dónde se
+                extiende la red en cada dirección, pero hay al menos seis líneas distintas. Se cree
+                que, de todas las líneas del Metro-2 (denominadas C1-C6), la línea C5 se dirige
+                hacia el este, la C3 hacia el norte/noreste y la C4 hacia el sur, en dirección a
+                Kievskaya. Es probable que los trenes del Metro-2 conecten con las principales
+                instalaciones gubernamentales: la sede del FSB, el aeropuerto de Vnukovo, el Kremlin
+                y otras instalaciones importantes en superficie.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-//   $(document).ready(function() {
-//     $('metroMap').imageMapResize();
-//   });
+    <div id="MoscowModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('MoscowModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>MOSCOW</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/Moscow_exodus.webp"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                Tras una devastadora guerra nuclear en 2013 entre Rusia y la OTAN, la población
+                superviviente se refugió en la extensa red de metro, diseñada originalmente como
+                refugio antiatómico. Poco después de los primeros bombardeos, tanto los animales
+                como los humanos sufrieron horribles mutaciones y comenzaron a vagar por el páramo
+                helado y altamente irradiado; con el tiempo, se adentraron en el metro y
+                aterrorizaron a los residentes de las estaciones, que se habían convertido en
+                asentamientos improvisados.<br />En 2034, la superficie ha comenzado a normalizarse,
+                pero solo en apariencia. El hielo ha empezado a derretirse y, de vez en cuando, se
+                puede ver el sol, por no hablar de los ocasionales aguaceros. Los mutantes siguen
+                teniendo el control y el aire sigue estando muy contaminado por la radiación. La
+                guerra sigue causando estragos en el metro entre las distintas facciones, y el
+                búnker militar secreto D6 guarda secretos que podrían salvar o destruir el metro.
+                Tras la batalla de D6 y la pérdida del búnker, los Spartans se trasladan a Polis.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-//   $('auroraMap').imageMapResize();
-//   $(document).ready(function() {
-//     $('auroraMap').imageMapResize();
-// });
+    <div id="VolgaModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('VolgaModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>VOLGA</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/D6Location.webp"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                La región del Volga se encuentra alrededor del cauce de un gran río y de las ruinas
+                de varias instalaciones industriales e infraestructuras ferroviarias parcialmente
+                inundadas tras la guerra nuclear. El aumento del nivel del agua y el deterioro de
+                las represas y sistemas de drenaje transformaron la zona en un extenso territorio
+                pantanoso, donde numerosos edificios, vías férreas y pueblos quedaron sumergidos o
+                aislados entre canales y áreas inundadas.<br />
+                La población sobreviviente de la región se reorganizó alrededor de una comunidad
+                religiosa liderada por un sacerdote conocido como Silantius. Este grupo considera la
+                tecnología previa a la guerra como responsable de la destrucción del mundo y rechaza
+                el uso de maquinaria moderna, armas avanzadas y dispositivos eléctricos. Muchos de
+                sus miembros viven en pequeñas aldeas construidas sobre tierra firme, muelles
+                improvisados o estructuras recuperadas de antiguas instalaciones industriales.<br />
+                En distintos puntos del Volga todavía se conservan restos de infraestructura
+                soviética y ferroviaria: depósitos de trenes, fábricas abandonadas, puentes dañados,
+                torres de mantenimiento y vagones oxidados dispersos cerca de las vías. También
+                existen antiguos edificios civiles parcialmente destruidos por la radiación, la
+                humedad y el paso del tiempo.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</script>
+    <div id="YamantauModa" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('YamantauModa').style.display = 'none'"
+          >&times;</span
+        >
+        <h1>Yamantau</h1>
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>YAMANTAU</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/YamantauLocation.png"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                Desde los Urales se transmite un mensaje que afirma que el gobierno ruso sigue
+                operativo desde un búnker subterráneo y están dispuestos a acudir civiles. Esta es
+                la meta original de la tripulación a bordo de la Aurora. <br />
+                El búnker sobrevivió al bombardeo nuclear, pero al interno faltaban los recursos
+                para mantener la población. Rápidamente, la situación se deteriorará al interno y
+                los habitantes, para sobrevivir, se dedican al canibalismo. Al interno se dan cuenta
+                de que necesitarán más alimentos para el futuro; entonces empiezan a transmitir
+                mensajes de promesas y esperanzas en la radio, atrayendo sobrevivientes para
+                proceder a alimentarse de ellos.<br />
+                En la entrada del búnker se resalta la enorme cantidad de vehículos estacionados,
+                posiblemente propiedad de sobrevivientes que entraron al búnker antes de desaparecer
+                para siempre.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="./jquery-4.0.0.js"></script>
-  <script src="./ImageMapResponsive/js/imageMapResizer.min.js"></script>
-  <script type="text/javascript"> $('map').imageMapResize(); </script>
+    <div id="CaspianModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('CaspianModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>CASPIAN</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/CaspianLocation.webp"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                La región del Caspio es una antigua zona costera transformada en un desierto tras la
+                guerra nuclear. El nivel se desarrolla sobre el lecho seco del mar Caspio, donde el
+                agua retrocedió dejando barcos encallados, puertos abandonados y estructuras
+                industriales parcialmente cubiertas por arena. Gran parte de la infraestructura
+                petrolera y marítima continúa en pie, aunque muy deteriorada por el paso del tiempo
+                y las tormentas de arena.<br />La zona está controlada por un grupo armado liderado
+                por el Barón, un antiguo comandante militar que domina el territorio mediante el
+                control del agua y el combustible. Sus hombres ocupan refinerías, depósitos y barcos
+                reutilizados como bases fortificadas. Muchos sobrevivientes de la región fueron
+                convertidos en esclavos y obligados a trabajar extrayendo petróleo o manteniendo las
+                instalaciones operativas.<br />El ambiente del Caspio está marcado por el calor
+                extremo, las tormentas de arena y la escasez de agua potable. La mayoría de los
+                asentamientos humanos dependen de pozos, sistemas de filtrado o reservas controladas
+                por el Barón. Además de los grupos armados, la región está habitada por diversas
+                criaturas mutadas adaptadas al clima desértico y a las ruinas del antiguo litoral.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <div id="TaigaModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('TaigaModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>TAIGA</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/TaigaLocation.webp"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                La región de Taiga es una extensa zona boscosa ubicada en las cercanías de un
+                antiguo valle ferroviario y áreas rurales que lograron evitar gran parte de la
+                destrucción nuclear directa. A diferencia de otras regiones devastadas, el entorno
+                conserva abundante vegetación, ríos, lagos y bosques densos que crecieron sin
+                intervención humana durante años. Muchas estructuras anteriores a la guerra
+                continúan en pie, aunque deterioradas y cubiertas por la naturaleza.<br />Tras el
+                colapso de la civilización, la zona quedó aislada del resto del mundo y sus
+                habitantes desarrollaron comunidades cerradas con fuertes creencias religiosas y
+                tradicionales.<br />En la región todavía existen restos visibles de infraestructura
+                soviética y ferroviaria: túneles, vías dañadas, puentes de madera, estaciones
+                abandonadas y depósitos industriales cubiertos por vegetación. También pueden
+                encontrarse embarcaciones deterioradas en los ríos y antiguos edificios parcialmente
+                destruidos por el tiempo y la humedad.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="DeadCityModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span
+          class="close"
+          onclick="document.getElementById('DeadCityModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>CIUDAD MUERTA</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/DeadCityLocation.webp"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                La Ciudad Muerta corresponde a las ruinas de la área urbana de Novosibirsk devastada
+                directamente por los bombardeos nucleares. Décadas después de la guerra, la región
+                continúa siendo una de las zonas más contaminadas y peligrosas del país debido a los
+                altos niveles de radiación presentes en el ambiente. Gran parte de los edificios
+                permanecen destruidos o severamente dañados, con calles bloqueadas por escombros,
+                vehículos abandonados y estructuras colapsadas.<br />
+                A diferencia de otras regiones habitadas, en la Ciudad Muerta no existen
+                asentamientos humanos permanentes debido a la radiación extrema y la presencia
+                constante de criaturas mutadas. La mayor parte del territorio está dominado por
+                especies altamente agresivas adaptadas a los espacios urbanos abandonados,
+                especialmente en edificios oscuros, túneles y zonas subterráneas.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="BaikalModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('BaikalModal').style.display = 'none'"
+          >&times;</span
+        >
+        <div class="w3-container">
+          <div class="w3-card-4" style="width: 100%; box-shadow: none">
+            <div class="w3-container">
+              <h1>LAGO BAIKAL</h1>
+              <hr />
+              <br />
+              <img
+                src="./img/BaikalLocation.webp"
+                alt="Avatar"
+                class="w3-leftw3-margin-right"
+                style="width: 100%"
+              /><br />
+              <p>
+                El lago Baikal es una región alejada de las grandes zonas urbanas y relativamente
+                poco afectada por la guerra nuclear. Rodeado de bosques, montañas y agua dulce en
+                abundancia, el lugar ofrece condiciones mucho más estables para la supervivencia que
+                las regiones recorridas anteriormente por la tripulación de la Aurora. La baja
+                presencia de radiación, la disponibilidad de recursos naturales y el aislamiento
+                geográfico convierten al área en uno de los pocos lugares habitables y seguros
+                encontrados durante el viaje.<br />
+
+                Tras años recorriendo territorios destruidos y enfrentándose tanto a mutantes como a
+                otros grupos humanos, la tripulación decide establecerse en las cercanías del lago.
+                El Baikal se convierte así en el nuevo hogar de la tripulacion y en la oportunidad
+                de comenzar una vida más estable lejos de las ruinas del antiguo mundo.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <br />
+      <br />
+      <p class="footerText">ACADEMIC PROJECT OF <a href="#">MATIAS SENN</a> ALL COPIRIGHT TO:</p>
+      <div class="companiesSection">
+        <div class="companies">
+          <h2>DEEPSILVER</h2>
+          <img src="./img/Deep-Silver.png" alt="DEEPSILVER" class="companiesImg" />
+        </div>
+        <div class="companies">
+          <h2>4A games</h2>
+          <img src="./img/4a-games.png" alt="4A-GAMES" class="companiesImg" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById().click();
+    </script>
+
+    <!-- Modal Script -->
+    <script type="text/javascript" src="./modalMap.js"></script>
+
+    <script src="./jquery-4.0.0.js"></script>
+    <script src="./ImageMapResponsive/js/imageMapResizer.min.js"></script>
+    <script type="text/javascript">
+      $("map").imageMapResize();
+    </script>
+  </body>
 </html>
