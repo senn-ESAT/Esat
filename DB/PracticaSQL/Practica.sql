@@ -106,7 +106,7 @@ WHERE U.USR_ID = PC.PTC_USR_ID
 AND PC.PTC_CAMP_ID = C.CAMP_ID
 AND PC.PTC_USER_GANADOR_SN = TRUE
 AND U.USR_PARTIDAS_JUGADAS > 10
-GROUP BY U.USR_ID
+GROUP BY U.USR_ID;
 
 
 -- 9.Para cada país indicar que jugadores han ganado más partidas y cuales menos
@@ -124,3 +124,27 @@ GROUP BY U.USR_ID
 --                         AND y.max_total = x.total
 -- GROUP BY U.USR_ID
 -- ORDER BY U.USR_PAIS_ORIGEN,  PNT_USR DESC;
+
+-- 10. Insertar un registro en la tabla de campeonato.
+
+INSERT INTO CAMPEONATOS (
+	CAMP_FECHA_COMIENZO ,
+	CAMP_TOTAL_INSCRIPTORES,
+	CAMP_PUNTOS_GANADOS,
+	CAMP_NOMBRE_CAMPEONATO,
+	CAMP_USR_CREADOR_CAMP,
+	CAMP_FECHA_FINALIZACION,
+	CAMP_NUM_USR_BLOQUEDOS)
+VALUES
+('2026-05-17', 3, 2000, 'Nuevo Registro', 1, '2026-05-20', 0);
+
+-- 11. Modificar el registro creado en el punto 10.
+
+UPDATE CAMPEONATOS
+SET CAMP_PUNTOS_GANADOS = 1500
+WHERE CAMP_NOMBRE_CAMPEONATO = 'Nuevo Registro';
+
+-- 12. Eliminar el registro creado en el punto 11
+
+DELETE FROM CAMPEONATOS
+WHERE CAMP_NOMBRE_CAMPEONATO = 'Nuevo Registro';
