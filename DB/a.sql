@@ -1,4 +1,4 @@
-/*
+
 SELECT NIP AS codigo, nombre FROM alumnos;
 SELECT alumnos.Calificacion AS Nota FROM alumnos;
 SELECT A.edad, A.nip AS codigo_alumno FROM alumnos AS A;

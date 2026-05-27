@@ -481,51 +481,51 @@ int esat::main(int argc, char** argv) {
     mousePosition.x = esat::MousePositionX();
     mousePosition.y = esat::MousePositionY();
 
-    // esat::DrawPath(ship.puntosNave, 4);
+     esat::DrawPath(ship.puntosNave, 4);
 
     // Controls();
     // Move();
 
-    // esat::Vec2 ShipPos = {ship.pos.x, ship.pos.y};
-    // // Player
-    // if(ChechProximity(ship.pos, mousePosition, 20)){
-    //   bool stillInside = true;
-    //   float previusCross;
-    //   printf("\nCLOSE TO P1 -> ");
-    //   int nPoints = 3, i = 0;
-    //   while(stillInside && i < nPoints * 2){
-    //                   // x                  // y
-    //     mm::Vec2 A = {ship.puntosNave[i], ship.puntosNave[i + 1]};     // 0 -> 1 -> 2 etc...
-    //     mm::Vec2 B = {ship.puntosNave[i + 2], ship.puntosNave[i + 3]}; // 1 -> 2 -> 3 etc...
-    //     mm::Vec2 p = {mousePosition.x, mousePosition.y};               // p
-    //     float newCross = PointInTriangle(p, A, B);
+    esat::Vec2 ShipPos = {ship.pos.x, ship.pos.y};
+    // Player
+    if(ChechProximity(ship.pos, mousePosition, 20)){
+      bool stillInside = true;
+      float previusCross;
+      printf("\nCLOSE TO P1 -> ");
+      int nPoints = 3, i = 0;
+      while(stillInside && i < nPoints * 2){
+                      // x                  // y
+        mm::Vec2 A = {ship.puntosNave[i], ship.puntosNave[i + 1]};     // 0 -> 1 -> 2 etc...
+        mm::Vec2 B = {ship.puntosNave[i + 2], ship.puntosNave[i + 3]}; // 1 -> 2 -> 3 etc...
+        mm::Vec2 p = {mousePosition.x, mousePosition.y};               // p
+        float newCross = PointInTriangle(p, A, B);
 
-    //     if(i != 0){
-    //       if((newCross < 0 && previusCross < 0) || (newCross > 0 && previusCross > 0)){
-    //         stillInside = true;
-    //       }else{
-    //         stillInside = false;
-    //       }
-    //     }
-    //     previusCross = newCross;
-    //     i+=2;
-    //   }
+        if(i != 0){
+          if((newCross < 0 && previusCross < 0) || (newCross > 0 && previusCross > 0)){
+            stillInside = true;
+          }else{
+            stillInside = false;
+          }
+        }
+        previusCross = newCross;
+        i+=2;
+      }
 
-    //   if(stillInside){
-    //     printf("COLISION PLAYER");
-    //   }
-    // }
-
-    esat::Mat3 m = MatAsteroid(aste.pos, aste.size);
-    DrawAsteroid(m, aste.points, aste.nPoints);
-
-    // ASTEROIDE
-    if(ChechProximity(aste.pos, mousePosition, aste.size)){
-      printf("\nCLOSE TO ASTE -> ");
-      if(colisionDetector(mousePosition, m, aste.areas, aste.nAreas)){
-        printf("COLISION ASTEROIDS");
+      if(stillInside){
+        printf("COLISION PLAYER");
       }
     }
+
+    // esat::Mat3 m = MatAsteroid(aste.pos, aste.size);
+    // DrawAsteroid(m, aste.points, aste.nPoints);
+
+    // // ASTEROIDE
+    // if(ChechProximity(aste.pos, mousePosition, aste.size)){
+    //   printf("\nCLOSE TO ASTE -> ");
+    //   if(colisionDetector(mousePosition, m, aste.areas, aste.nAreas)){
+    //     printf("COLISION ASTEROIDS");
+    //   }
+    // }
 
     esat::DrawEnd();
     esat::WindowFrame();
